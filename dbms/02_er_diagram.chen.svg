@@ -1,0 +1,451 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="2500" viewBox="0 0 3400 2500">
+<defs><style>text{font-family:Inter,Arial,sans-serif;fill:#172033}.title{font-size:38px;font-weight:700}.sub{font-size:17px;fill:#526078}.entity{fill:#fff;stroke:#34445e;stroke-width:2}.entityhead{fill:#e9eff8;stroke:#34445e;stroke-width:2}.field{font-size:15px}.ename{font-size:21px;font-weight:700}.rel{stroke:#73839b;stroke-width:2;fill:none}.reltext{font-size:13px;fill:#34445e}.small{font-size:13px;fill:#526078}</style></defs>
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<text x="70" y="65" class="title">STOX — Chen ER Diagram</text>
+<text x="70" y="100" class="sub">Entities are rectangles • relationships are diamonds • attributes are ovals • underlined labels denote primary keys</text>
+<line x1="220.0" y1="230.0" x2="635.0" y2="196.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="635.0" y1="196.0" x2="1050.0" y2="230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="635.0,171.0 711.0,196.0 635.0,221.0 559.0,196.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="635.0" y="201.0" text-anchor="middle" font-size="12" fill="#57421e">owns</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1050.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1050.0" y2="230.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="230.0" x2="1880.0" y2="230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,205.0 1126.0,230.0 1050.0,255.0 974.0,230.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="235.0" text-anchor="middle" font-size="12" fill="#57421e">owns</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1880.0" y1="230.0" x2="2295.0" y2="264.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="2295.0" y1="264.0" x2="2710.0" y2="230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="2295.0,239.0 2371.0,264.0 2295.0,289.0 2219.0,264.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="2295.0" y="269.0" text-anchor="middle" font-size="12" fill="#57421e">contains</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="2710.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1880.0" y1="230.0" x2="1057.9648011492245" y2="463.05392476928137" stroke="#7b8799" stroke-width="2"/>
+<line x1="1057.9648011492245" y1="463.05392476928137" x2="220.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1057.9648011492245,438.05392476928137 1133.9648011492245,463.05392476928137 1057.9648011492245,488.05392476928137 981.9648011492245,463.05392476928137" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1057.9648011492245" y="468.05392476928137" text-anchor="middle" font-size="12" fill="#57421e">receives</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1880.0" y1="230.0" x2="1880.0" y2="430.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1880.0" y1="430.0" x2="1880.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1880.0,405.0 1956.0,430.0 1880.0,455.0 1804.0,430.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1880.0" y="435.0" text-anchor="middle" font-size="12" fill="#57421e">records</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="630.0" x2="1050.0" y2="664.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="664.0" x2="1880.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,639.0 1126.0,664.0 1050.0,689.0 974.0,664.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="669.0" text-anchor="middle" font-size="12" fill="#57421e">produces</text>
+<text x="220.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">0..1</text>
+<line x1="220.0" y1="630.0" x2="1465.0" y2="596.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1465.0" y1="596.0" x2="2710.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1465.0,571.0 1541.0,596.0 1465.0,621.0 1389.0,596.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1465.0" y="601.0" text-anchor="middle" font-size="12" fill="#57421e">has history</text>
+<text x="220.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="2710.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1880.0" y1="230.0" x2="1050.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="630.0" x2="220.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,605.0 1126.0,630.0 1050.0,655.0 974.0,630.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="635.0" text-anchor="middle" font-size="12" fill="#57421e">has snapshots</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="611.404849417505" y2="654.4799687293385" stroke="#7b8799" stroke-width="2"/>
+<line x1="611.404849417505" y1="654.4799687293385" x2="1050.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="611.404849417505,629.4799687293385 687.404849417505,654.4799687293385 611.404849417505,679.4799687293385 535.404849417505,654.4799687293385" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="611.404849417505" y="659.4799687293385" text-anchor="middle" font-size="12" fill="#57421e">receives</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1050.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1064.7608253460214" y2="599.3712874070056" stroke="#7b8799" stroke-width="2"/>
+<line x1="1064.7608253460214" y1="599.3712874070056" x2="1880.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1064.7608253460214,574.3712874070056 1140.7608253460214,599.3712874070056 1064.7608253460214,624.3712874070056 988.7608253460214,599.3712874070056" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1064.7608253460214" y="604.3712874070056" text-anchor="middle" font-size="12" fill="#57421e">follower in</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1050.0" y2="630.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="630.0" x2="1880.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,605.0 1126.0,630.0 1050.0,655.0 974.0,630.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="635.0" text-anchor="middle" font-size="12" fill="#57421e">followed in</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1454.599896088408" y2="662.3703234248298" stroke="#7b8799" stroke-width="2"/>
+<line x1="1454.599896088408" y1="662.3703234248298" x2="2710.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1454.599896088408,637.3703234248298 1530.599896088408,662.3703234248298 1454.599896088408,687.3703234248298 1378.599896088408,662.3703234248298" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1454.599896088408" y="667.3703234248298" text-anchor="middle" font-size="12" fill="#57421e">copier in</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="2710.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1475.400103911592" y2="597.6296765751702" stroke="#7b8799" stroke-width="2"/>
+<line x1="1475.400103911592" y1="597.6296765751702" x2="2710.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1475.400103911592,572.6296765751702 1551.400103911592,597.6296765751702 1475.400103911592,622.6296765751702 1399.400103911592,597.6296765751702" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1475.400103911592" y="602.6296765751702" text-anchor="middle" font-size="12" fill="#57421e">copied in</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="2710.0" y="958.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="220.0" y2="830.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="220.0" y1="830.0" x2="220.0" y2="1430.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="220.0,805.0 296.0,830.0 220.0,855.0 144.0,830.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="220.0" y="835.0" text-anchor="middle" font-size="12" fill="#57421e">creates</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1050.0" y1="630.0" x2="611.404849417505" y2="1005.5200312706615" stroke="#7b8799" stroke-width="2"/>
+<line x1="611.404849417505" y1="1005.5200312706615" x2="220.0" y2="1430.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="611.404849417505,980.5200312706615 687.404849417505,1005.5200312706615 611.404849417505,1030.5200312706615 535.404849417505,1005.5200312706615" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="611.404849417505" y="1010.5200312706615" text-anchor="middle" font-size="12" fill="#57421e">is monitored by</text>
+<text x="1050.0" y="558.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1050.0" y1="1430.0" x2="1465.0" y2="1396.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1465.0" y1="1396.0" x2="1880.0" y2="1430.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1465.0,1371.0 1541.0,1396.0 1465.0,1421.0 1389.0,1396.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1465.0" y="1401.0" text-anchor="middle" font-size="12" fill="#57421e">contains</text>
+<text x="1050.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1050.0" y2="830.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="830.0" x2="1880.0" y2="1430.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,805.0 1126.0,830.0 1050.0,855.0 974.0,830.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="835.0" text-anchor="middle" font-size="12" fill="#57421e">earns</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1450.2391746539786" y2="860.6287125929944" stroke="#7b8799" stroke-width="2"/>
+<line x1="1450.2391746539786" y1="860.6287125929944" x2="2710.0" y2="1430.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1450.2391746539786,835.6287125929944 1526.2391746539786,860.6287125929944 1450.2391746539786,885.6287125929944 1374.2391746539786,860.6287125929944" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1450.2391746539786" y="865.6287125929944" text-anchor="middle" font-size="12" fill="#57421e">authors</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="2710.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="2710.0" y1="1430.0" x2="1470.3927083875437" y2="1663.5696097124603" stroke="#7b8799" stroke-width="2"/>
+<line x1="1470.3927083875437" y1="1663.5696097124603" x2="220.0" y2="1830.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1470.3927083875437,1638.5696097124603 1546.3927083875437,1663.5696097124603 1470.3927083875437,1688.5696097124603 1394.3927083875437,1663.5696097124603" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1470.3927083875437" y="1668.5696097124603" text-anchor="middle" font-size="12" fill="#57421e">has likes</text>
+<text x="2710.0" y="1358.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="1758.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="220.0" y2="1030.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="220.0" y1="1030.0" x2="220.0" y2="1830.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="220.0,1005.0 296.0,1030.0 220.0,1055.0 144.0,1030.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="220.0" y="1035.0" text-anchor="middle" font-size="12" fill="#57421e">likes</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="1758.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="604.819201373332" y2="1045.656289287584" stroke="#7b8799" stroke-width="2"/>
+<line x1="604.819201373332" y1="1045.656289287584" x2="1050.0" y2="1830.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="604.819201373332,1020.6562892875841 680.819201373332,1045.656289287584 604.819201373332,1070.656289287584 528.819201373332,1045.656289287584" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="604.819201373332" y="1050.656289287584" text-anchor="middle" font-size="12" fill="#57421e">has preference</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1050.0" y="1758.0" text-anchor="middle" font-size="12" fill="#526078">0..1</text>
+<line x1="220.0" y1="230.0" x2="1073.5951505824949" y2="1005.5200312706615" stroke="#7b8799" stroke-width="2"/>
+<line x1="1073.5951505824949" y1="1005.5200312706615" x2="1880.0" y2="1830.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1073.5951505824949,980.5200312706615 1149.5951505824949,1005.5200312706615 1073.5951505824949,1030.5200312706615 997.5951505824949,1005.5200312706615" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1073.5951505824949" y="1010.5200312706615" text-anchor="middle" font-size="12" fill="#57421e">casts</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="1758.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="220.0" y2="1230.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="220.0" y1="1230.0" x2="220.0" y2="2230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="220.0,1205.0 296.0,1230.0 220.0,1255.0 144.0,1230.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="220.0" y="1235.0" text-anchor="middle" font-size="12" fill="#57421e">unlocks</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="2710.0" y1="1830.0" x2="1459.6072916124563" y2="1996.4303902875397" stroke="#7b8799" stroke-width="2"/>
+<line x1="1459.6072916124563" y1="1996.4303902875397" x2="220.0" y2="2230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1459.6072916124563,1971.4303902875397 1535.6072916124563,1996.4303902875397 1459.6072916124563,2021.4303902875397 1383.6072916124563,1996.4303902875397" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1459.6072916124563" y="2001.4303902875397" text-anchor="middle" font-size="12" fill="#57421e">is unlocked through</text>
+<text x="2710.0" y="1758.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="220.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1050.0" y1="2230.0" x2="1465.0" y2="2196.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1465.0" y1="2196.0" x2="1880.0" y2="2230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1465.0,2171.0 1541.0,2196.0 1465.0,2221.0 1389.0,2196.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1465.0" y="2201.0" text-anchor="middle" font-size="12" fill="#57421e">has members</text>
+<text x="1050.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="220.0" y1="230.0" x2="1050.0" y2="1230.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1050.0" y1="1230.0" x2="1880.0" y2="2230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1050.0,1205.0 1126.0,1230.0 1050.0,1255.0 974.0,1230.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1050.0" y="1235.0" text-anchor="middle" font-size="12" fill="#57421e">joins</text>
+<text x="220.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">0..*</text>
+<line x1="1880.0" y1="230.0" x2="1846.0" y2="1230.0" stroke="#7b8799" stroke-width="2"/>
+<line x1="1846.0" y1="1230.0" x2="1880.0" y2="2230.0" stroke="#7b8799" stroke-width="2"/>
+<polygon points="1846.0,1205.0 1922.0,1230.0 1846.0,1255.0 1770.0,1230.0" fill="#fff4dc" stroke="#8b6b32" stroke-width="2"/>
+<text x="1846.0" y="1235.0" text-anchor="middle" font-size="12" fill="#57421e">assigned to</text>
+<text x="1880.0" y="158.0" text-anchor="middle" font-size="12" fill="#526078">1</text>
+<text x="1880.0" y="2158.0" text-anchor="middle" font-size="12" fill="#526078">0..1</text>
+<rect x="70" y="170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">User</text>
+<text x="220.0" y="248" text-anchor="middle" font-size="12" fill="#526078">PK id • email • name</text>
+<ellipse cx="105.0" cy="128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="146" x2="220.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">email</text>
+<line x1="335.0" y1="146" x2="220.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="90" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="94" text-anchor="middle" font-size="11" fill="#34445e">name</text>
+<line x1="105.0" y1="108" x2="220.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">RefreshToken</text>
+<text x="1050.0" y="248" text-anchor="middle" font-size="12" fill="#526078">PK id • token • FK userId</text>
+<ellipse cx="935.0" cy="128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="146" x2="1050.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">token</text>
+<line x1="1165.0" y1="146" x2="1050.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="935.0" cy="90" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="935.0" y="94" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="935.0" y1="108" x2="1050.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Portfolio</text>
+<text x="1880.0" y="248" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId • name</text>
+<ellipse cx="1765.0" cy="128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="146" x2="1880.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="1995.0" y1="146" x2="1880.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="90" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="94" text-anchor="middle" font-size="11" fill="#34445e">name</text>
+<line x1="1765.0" y1="108" x2="1880.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="2560" y="170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="2710.0" y="218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Holding</text>
+<text x="2710.0" y="248" text-anchor="middle" font-size="12" fill="#526078">PK id • FK portfolioId • symbol</text>
+<ellipse cx="2595.0" cy="128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="2595.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="2595.0" y1="146" x2="2710.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="132" text-anchor="middle" font-size="11" fill="#34445e">portfolioId</text>
+<line x1="2825.0" y1="146" x2="2710.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2595.0" cy="90" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2595.0" y="94" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="2595.0" y1="108" x2="2710.0" y2="170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="70" y="570" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="618" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Order</text>
+<text x="220.0" y="648" text-anchor="middle" font-size="12" fill="#526078">PK id • FK portfolioId • symbol • status</text>
+<ellipse cx="105.0" cy="528" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="546" x2="220.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="528" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">portfolioId</text>
+<line x1="335.0" y1="546" x2="220.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="490" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="494" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="105.0" y1="508" x2="220.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="490" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="494" text-anchor="middle" font-size="11" fill="#34445e">status</text>
+<line x1="335.0" y1="508" x2="220.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="570" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="618" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Symbol</text>
+<text x="1050.0" y="648" text-anchor="middle" font-size="12" fill="#526078">PK id • symbol • name</text>
+<ellipse cx="935.0" cy="528" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="546" x2="1050.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="528" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="1165.0" y1="546" x2="1050.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="935.0" cy="490" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="935.0" y="494" text-anchor="middle" font-size="11" fill="#34445e">name</text>
+<line x1="935.0" y1="508" x2="1050.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="570" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="618" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Trade</text>
+<text x="1880.0" y="648" text-anchor="middle" font-size="12" fill="#526078">PK id • FK portfolioId • FK orderId (UQ) • symbol</text>
+<ellipse cx="1765.0" cy="528" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="546" x2="1880.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="528" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">portfolioId</text>
+<line x1="1995.0" y1="546" x2="1880.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="490" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="494" text-anchor="middle" font-size="11" fill="#34445e">orderId (UQ)</text>
+<line x1="1765.0" y1="508" x2="1880.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="490" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="494" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="1995.0" y1="508" x2="1880.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="2560" y="570" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="2710.0" y="618" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">OrderEvent</text>
+<text x="2710.0" y="648" text-anchor="middle" font-size="12" fill="#526078">PK id • FK orderId</text>
+<ellipse cx="2595.0" cy="528" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="2595.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="2595.0" y1="546" x2="2710.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="528" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="532" text-anchor="middle" font-size="11" fill="#34445e">orderId</text>
+<line x1="2825.0" y1="546" x2="2710.0" y2="570" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="70" y="970" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="1018" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">PerformanceSnapshot</text>
+<text x="220.0" y="1048" text-anchor="middle" font-size="12" fill="#526078">PK id • FK portfolioId • snapshotDate</text>
+<ellipse cx="105.0" cy="928" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="946" x2="220.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="928" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">portfolioId</text>
+<line x1="335.0" y1="946" x2="220.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="890" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="894" text-anchor="middle" font-size="11" fill="#34445e">snapshotDate</text>
+<line x1="105.0" y1="908" x2="220.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="970" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="1018" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Notification</text>
+<text x="1050.0" y="1048" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId</text>
+<ellipse cx="935.0" cy="928" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="946" x2="1050.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="928" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="1165.0" y1="946" x2="1050.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="970" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="1018" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Follow</text>
+<text x="1880.0" y="1048" text-anchor="middle" font-size="12" fill="#526078">PK id • FK followerId • FK followingId</text>
+<ellipse cx="1765.0" cy="928" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="946" x2="1880.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="928" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">followerId</text>
+<line x1="1995.0" y1="946" x2="1880.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="890" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="894" text-anchor="middle" font-size="11" fill="#34445e">followingId</text>
+<line x1="1765.0" y1="908" x2="1880.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="2560" y="970" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="2710.0" y="1018" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">CopyTrader</text>
+<text x="2710.0" y="1048" text-anchor="middle" font-size="12" fill="#526078">PK id • FK copierId • FK copiedId • allocationPct</text>
+<ellipse cx="2595.0" cy="928" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="2595.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="2595.0" y1="946" x2="2710.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="928" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="932" text-anchor="middle" font-size="11" fill="#34445e">copierId</text>
+<line x1="2825.0" y1="946" x2="2710.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2595.0" cy="890" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2595.0" y="894" text-anchor="middle" font-size="11" fill="#34445e">copiedId</text>
+<line x1="2595.0" y1="908" x2="2710.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="890" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="894" text-anchor="middle" font-size="11" fill="#34445e">allocationPct</text>
+<line x1="2825.0" y1="908" x2="2710.0" y2="970" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="70" y="1370" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="1418" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Alert</text>
+<text x="220.0" y="1448" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId • FK symbolId • status</text>
+<ellipse cx="105.0" cy="1328" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="1346" x2="220.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="1328" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="335.0" y1="1346" x2="220.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="1290" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="1294" text-anchor="middle" font-size="11" fill="#34445e">symbolId</text>
+<line x1="105.0" y1="1308" x2="220.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="1290" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="1294" text-anchor="middle" font-size="11" fill="#34445e">status</text>
+<line x1="335.0" y1="1308" x2="220.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="1370" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="1418" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">LeaderboardSnapshot</text>
+<text x="1050.0" y="1448" text-anchor="middle" font-size="12" fill="#526078">PK id • snapshotDate</text>
+<ellipse cx="935.0" cy="1328" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="1346" x2="1050.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="1328" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">snapshotDate</text>
+<line x1="1165.0" y1="1346" x2="1050.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="1370" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="1418" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">LeaderboardEntry</text>
+<text x="1880.0" y="1448" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId • FK snapshotId • rank • snapshotDate</text>
+<ellipse cx="1765.0" cy="1328" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="1346" x2="1880.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="1328" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="1995.0" y1="1346" x2="1880.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="1290" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="1294" text-anchor="middle" font-size="11" fill="#34445e">snapshotId</text>
+<line x1="1765.0" y1="1308" x2="1880.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="1290" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="1294" text-anchor="middle" font-size="11" fill="#34445e">rank</text>
+<line x1="1995.0" y1="1308" x2="1880.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="2560" y="1370" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="2710.0" y="1418" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Post</text>
+<text x="2710.0" y="1448" text-anchor="middle" font-size="12" fill="#526078">PK id • FK authorId • symbol</text>
+<ellipse cx="2595.0" cy="1328" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="2595.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="2595.0" y1="1346" x2="2710.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="1328" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="1332" text-anchor="middle" font-size="11" fill="#34445e">authorId</text>
+<line x1="2825.0" y1="1346" x2="2710.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2595.0" cy="1290" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2595.0" y="1294" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="2595.0" y1="1308" x2="2710.0" y2="1370" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="70" y="1770" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="1818" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">PostLike</text>
+<text x="220.0" y="1848" text-anchor="middle" font-size="12" fill="#526078">PK id • FK postId • FK userId</text>
+<ellipse cx="105.0" cy="1728" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="1746" x2="220.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="1728" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">postId</text>
+<line x1="335.0" y1="1746" x2="220.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="1690" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="1694" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="105.0" y1="1708" x2="220.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="1770" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="1818" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">UserPreference</text>
+<text x="1050.0" y="1848" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId (UQ)</text>
+<ellipse cx="935.0" cy="1728" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="1746" x2="1050.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="1728" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">userId (UQ)</text>
+<line x1="1165.0" y1="1746" x2="1050.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="1770" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="1818" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">SentimentVote</text>
+<text x="1880.0" y="1848" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId • symbol</text>
+<ellipse cx="1765.0" cy="1728" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="1746" x2="1880.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="1728" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="1995.0" y1="1746" x2="1880.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="1690" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="1694" text-anchor="middle" font-size="11" fill="#34445e">symbol</text>
+<line x1="1765.0" y1="1708" x2="1880.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="2560" y="1770" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="2710.0" y="1818" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Achievement</text>
+<text x="2710.0" y="1848" text-anchor="middle" font-size="12" fill="#526078">PK id • code • name</text>
+<ellipse cx="2595.0" cy="1728" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="2595.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="2595.0" y1="1746" x2="2710.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2825.0" cy="1728" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2825.0" y="1732" text-anchor="middle" font-size="11" fill="#34445e">code</text>
+<line x1="2825.0" y1="1746" x2="2710.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="2595.0" cy="1690" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="2595.0" y="1694" text-anchor="middle" font-size="11" fill="#34445e">name</text>
+<line x1="2595.0" y1="1708" x2="2710.0" y2="1770" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="70" y="2170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="220.0" y="2218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">UserAchievement</text>
+<text x="220.0" y="2248" text-anchor="middle" font-size="12" fill="#526078">PK id • FK userId • FK achievementId</text>
+<ellipse cx="105.0" cy="2128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="105.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="105.0" y1="2146" x2="220.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="335.0" cy="2128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="335.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="335.0" y1="2146" x2="220.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="105.0" cy="2090" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="105.0" y="2094" text-anchor="middle" font-size="11" fill="#34445e">achievementId</text>
+<line x1="105.0" y1="2108" x2="220.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="900" y="2170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1050.0" y="2218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">League</text>
+<text x="1050.0" y="2248" text-anchor="middle" font-size="12" fill="#526078">PK id • name • status</text>
+<ellipse cx="935.0" cy="2128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="935.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="935.0" y1="2146" x2="1050.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1165.0" cy="2128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1165.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">name</text>
+<line x1="1165.0" y1="2146" x2="1050.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="935.0" cy="2090" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="935.0" y="2094" text-anchor="middle" font-size="11" fill="#34445e">status</text>
+<line x1="935.0" y1="2108" x2="1050.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<rect x="1730" y="2170" width="300" height="120" fill="#e9eff8" stroke="#34445e" stroke-width="2.5"/>
+<text x="1880.0" y="2218" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">LeagueMember</text>
+<text x="1880.0" y="2248" text-anchor="middle" font-size="12" fill="#526078">PK id • FK leagueId • FK userId • FK portfolioId (UQ) • rank</text>
+<ellipse cx="1765.0" cy="2128" rx="82" ry="18" fill="#f2eaff" stroke="#7754a6" stroke-width="1.5"/>
+<text x="1765.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">id</text>
+<line x1="1765.0" y1="2146" x2="1880.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="2128" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="2132" text-anchor="middle" font-size="11" fill="#34445e">leagueId</text>
+<line x1="1995.0" y1="2146" x2="1880.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1765.0" cy="2090" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1765.0" y="2094" text-anchor="middle" font-size="11" fill="#34445e">userId</text>
+<line x1="1765.0" y1="2108" x2="1880.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<ellipse cx="1995.0" cy="2090" rx="82" ry="18" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="1995.0" y="2094" text-anchor="middle" font-size="11" fill="#34445e">portfolioId (UQ)</text>
+<line x1="1995.0" y1="2108" x2="1880.0" y2="2170" stroke="#9aa6b5" stroke-width="1.2"/>
+<text x="70" y="2440" font-size="15" fill="#526078">Chen view focuses on PK/FK and selected identifying attributes for legibility. Full attribute inventory is listed in the companion Crow’s Foot diagram.</text>
+</svg>
