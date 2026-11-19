@@ -314,6 +314,7 @@ CREATE TABLE "Trade" (
     "realizedPnlPct" DECIMAL(18,8),
 
     "executedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "copyFanOutAt" TIMESTAMP(3),
 
     CONSTRAINT "Trade_pkey" PRIMARY KEY ("id"),
     CONSTRAINT "Trade_orderId_key" UNIQUE ("orderId"),
@@ -342,6 +343,9 @@ CREATE INDEX "Trade_executedAt_idx"
 
 CREATE INDEX "Trade_portfolioId_executedAt_idx"
     ON "Trade" ("portfolioId", "executedAt");
+
+CREATE INDEX "Trade_copyFanOutAt_executedAt_idx"
+    ON "Trade" ("copyFanOutAt", "executedAt");
 
 
 -- 9. ORDER EVENT
@@ -414,6 +418,7 @@ CREATE INDEX "PerformanceSnapshot_snapshotDate_idx"
 
 CREATE TABLE "Notification" (
     "id" TEXT NOT NULL,
+    "eventKey" TEXT,
     "userId" TEXT NOT NULL,
 
     "type" "NotificationType" NOT NULL,
@@ -435,6 +440,7 @@ CREATE TABLE "Notification" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Notification_pkey" PRIMARY KEY ("id"),
+    CONSTRAINT "Notification_eventKey_key" UNIQUE ("eventKey"),
 
     CONSTRAINT "Notification_userId_fkey"
         FOREIGN KEY ("userId")
@@ -448,6 +454,9 @@ CREATE INDEX "Notification_userId_isRead_idx"
 
 CREATE INDEX "Notification_createdAt_idx"
     ON "Notification" ("createdAt");
+
+CREATE INDEX "Notification_deliveryStatus_createdAt_idx"
+    ON "Notification" ("deliveryStatus", "createdAt");
 
 
 -- 12. FOLLOW
@@ -491,6 +500,7 @@ CREATE TABLE "CopyTrader" (
 
     "copierId" TEXT NOT NULL,
     "copiedId" TEXT NOT NULL,
+    "copyPortfolioId" TEXT,
 
     "allocationPct" DECIMAL(5,2) NOT NULL DEFAULT 100,
     "maxTradeSize" DECIMAL(18,8),
@@ -516,6 +526,12 @@ CREATE TABLE "CopyTrader" (
         ON DELETE CASCADE
         ON UPDATE CASCADE,
 
+    CONSTRAINT "CopyTrader_copyPortfolioId_fkey"
+        FOREIGN KEY ("copyPortfolioId")
+        REFERENCES "Portfolio" ("id")
+        ON DELETE SET NULL
+        ON UPDATE CASCADE,
+
     -- Database-level integrity constraints
     CONSTRAINT "CopyTrader_allocationPct_check"
         CHECK ("allocationPct" > 0 AND "allocationPct" <= 100),
@@ -532,6 +548,9 @@ CREATE INDEX "CopyTrader_copierId_idx"
 
 CREATE INDEX "CopyTrader_copiedId_idx"
     ON "CopyTrader" ("copiedId");
+
+CREATE INDEX "CopyTrader_copyPortfolioId_idx"
+    ON "CopyTrader" ("copyPortfolioId");
 
 
 -- 14. ALERT
@@ -795,6 +814,8 @@ CREATE TABLE "UserAchievement" (
 
     "userId" TEXT NOT NULL,
     "achievementId" TEXT NOT NULL,
+
+    "reason" TEXT NOT NULL,
 
     "unlockedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
