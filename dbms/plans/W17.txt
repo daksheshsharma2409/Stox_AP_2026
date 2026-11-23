@@ -1,0 +1,26 @@
+=== W17 run 1 ===
+Update on "Alert"  (cost=0.00..1.47 rows=0 width=0) (actual time=0.024..0.024 rows=0.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.47 rows=1 width=50) (actual time=0.007..0.007 rows=1.00 loops=1)
+        Filter: ((id = ANY ('{alert-fixture-1}'::text[])) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.027 ms
+Execution Time: 0.030 ms
+
+=== W17 run 2 ===
+Update on "Alert"  (cost=0.00..1.47 rows=0 width=0) (actual time=0.017..0.017 rows=0.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.47 rows=1 width=50) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Filter: ((id = ANY ('{alert-fixture-1}'::text[])) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.021 ms
+Execution Time: 0.021 ms
+
+=== W17 run 3 ===
+Update on "Alert"  (cost=0.00..1.47 rows=0 width=0) (actual time=0.026..0.026 rows=0.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.47 rows=1 width=50) (actual time=0.005..0.005 rows=1.00 loops=1)
+        Filter: ((id = ANY ('{alert-fixture-1}'::text[])) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.026 ms
+Execution Time: 0.032 ms

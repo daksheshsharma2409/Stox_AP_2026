@@ -1,0 +1,32 @@
+=== W42 run 1 ===
+Insert on "LeaderboardSnapshot"  (cost=0.00..0.02 rows=1 width=52) (actual time=0.106..0.107 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: LeaderboardSnapshot_scope_period_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=10
+  ->  Result  (cost=0.00..0.02 rows=1 width=52) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Execution Time: 0.120 ms
+
+=== W42 run 2 ===
+Insert on "LeaderboardSnapshot"  (cost=0.00..0.02 rows=1 width=52) (actual time=0.017..0.017 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: LeaderboardSnapshot_scope_period_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=7
+  ->  Result  (cost=0.00..0.02 rows=1 width=52) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.009 ms
+Execution Time: 0.023 ms
+
+=== W42 run 3 ===
+Insert on "LeaderboardSnapshot"  (cost=0.00..0.02 rows=1 width=52) (actual time=0.015..0.015 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: LeaderboardSnapshot_scope_period_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=7
+  ->  Result  (cost=0.00..0.02 rows=1 width=52) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.008 ms
+Execution Time: 0.020 ms

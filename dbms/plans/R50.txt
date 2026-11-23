@@ -1,0 +1,31 @@
+=== R50 run 1 ===
+Sort  (cost=4.08..4.09 rows=4 width=185) (actual time=0.009..0.009 rows=4.00 loops=1)
+  Sort Key: "createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  Seq Scan on "Achievement"  (cost=0.00..4.04 rows=4 width=185) (actual time=0.005..0.005 rows=4.00 loops=1)
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.026 ms
+Execution Time: 0.013 ms
+
+=== R50 run 2 ===
+Sort  (cost=4.08..4.09 rows=4 width=185) (actual time=0.005..0.006 rows=4.00 loops=1)
+  Sort Key: "createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  Seq Scan on "Achievement"  (cost=0.00..4.04 rows=4 width=185) (actual time=0.003..0.003 rows=4.00 loops=1)
+        Buffers: shared hit=4
+Planning Time: 0.012 ms
+Execution Time: 0.009 ms
+
+=== R50 run 3 ===
+Sort  (cost=4.08..4.09 rows=4 width=185) (actual time=0.004..0.004 rows=4.00 loops=1)
+  Sort Key: "createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  Seq Scan on "Achievement"  (cost=0.00..4.04 rows=4 width=185) (actual time=0.002..0.003 rows=4.00 loops=1)
+        Buffers: shared hit=4
+Planning Time: 0.009 ms
+Execution Time: 0.006 ms

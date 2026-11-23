@@ -1,0 +1,140 @@
+=== W28 run 1 ===
+Limit  (cost=94.37..94.50 rows=50 width=176) (actual time=0.650..0.658 rows=50.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=94.37..95.26 rows=354 width=176) (actual time=0.650..0.653 rows=50.00 loops=1)
+        Sort Key: le.rank
+        Sort Method: top-N heapsort  Memory: 31kB
+        Buffers: shared hit=45
+        ->  WindowAgg  (cost=82.44..82.61 rows=354 width=176) (actual time=0.566..0.600 rows=177.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 33kB
+              Buffers: shared hit=45
+              ->  Hash Join  (cost=20.91..78.19 rows=354 width=168) (actual time=0.324..0.498 rows=177.00 loops=1)
+                    Hash Cond: (le."userId" = u.id)
+                    Buffers: shared hit=45
+                    ->  Hash Join  (cost=2.21..58.55 rows=354 width=53) (actual time=0.174..0.307 rows=177.00 loops=1)
+                          Hash Cond: (le."snapshotId" = ls.id)
+                          Buffers: shared hit=34
+                          ->  Seq Scan on "LeaderboardEntry" le  (cost=0.00..53.24 rows=354 width=90) (actual time=0.018..0.212 rows=354.00 loops=1)
+                                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                Rows Removed by Filter: 1062
+                                Buffers: shared hit=32
+                          ->  Hash  (cost=2.16..2.16 rows=4 width=37) (actual time=0.025..0.026 rows=4.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=2
+                                ->  Nested Loop  (cost=1.06..2.16 rows=4 width=37) (actual time=0.018..0.019 rows=4.00 loops=1)
+                                      Join Filter: (ls."snapshotDate" = (max("LeaderboardSnapshot"."snapshotDate")))
+                                      Rows Removed by Join Filter: 8
+                                      Buffers: shared hit=2
+                                      ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.011..0.012 rows=1.00 loops=1)
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.007..0.008 rows=3.00 loops=1)
+                                                  Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                                  Rows Removed by Filter: 9
+                                                  Buffers: shared hit=1
+                                      ->  Seq Scan on "LeaderboardSnapshot" ls  (cost=0.00..1.04 rows=4 width=41) (actual time=0.004..0.005 rows=12.00 loops=1)
+                                            Buffers: shared hit=1
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=152) (actual time=0.142..0.142 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 38kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.007..0.085 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+Planning:
+  Buffers: shared hit=195
+Planning Time: 1.175 ms
+Execution Time: 0.714 ms
+
+=== W28 run 2 ===
+Limit  (cost=94.37..94.50 rows=50 width=176) (actual time=0.351..0.357 rows=50.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=94.37..95.26 rows=354 width=176) (actual time=0.350..0.354 rows=50.00 loops=1)
+        Sort Key: le.rank
+        Sort Method: top-N heapsort  Memory: 31kB
+        Buffers: shared hit=45
+        ->  WindowAgg  (cost=82.44..82.61 rows=354 width=176) (actual time=0.296..0.320 rows=177.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 33kB
+              Buffers: shared hit=45
+              ->  Hash Join  (cost=20.91..78.19 rows=354 width=168) (actual time=0.159..0.261 rows=177.00 loops=1)
+                    Hash Cond: (le."userId" = u.id)
+                    Buffers: shared hit=45
+                    ->  Hash Join  (cost=2.21..58.55 rows=354 width=53) (actual time=0.078..0.152 rows=177.00 loops=1)
+                          Hash Cond: (le."snapshotId" = ls.id)
+                          Buffers: shared hit=34
+                          ->  Seq Scan on "LeaderboardEntry" le  (cost=0.00..53.24 rows=354 width=90) (actual time=0.003..0.095 rows=354.00 loops=1)
+                                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                Rows Removed by Filter: 1062
+                                Buffers: shared hit=32
+                          ->  Hash  (cost=2.16..2.16 rows=4 width=37) (actual time=0.009..0.010 rows=4.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=2
+                                ->  Nested Loop  (cost=1.06..2.16 rows=4 width=37) (actual time=0.008..0.008 rows=4.00 loops=1)
+                                      Join Filter: (ls."snapshotDate" = (max("LeaderboardSnapshot"."snapshotDate")))
+                                      Rows Removed by Join Filter: 8
+                                      Buffers: shared hit=2
+                                      ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.002..0.003 rows=3.00 loops=1)
+                                                  Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                                  Rows Removed by Filter: 9
+                                                  Buffers: shared hit=1
+                                      ->  Seq Scan on "LeaderboardSnapshot" ls  (cost=0.00..1.04 rows=4 width=41) (actual time=0.001..0.002 rows=12.00 loops=1)
+                                            Buffers: shared hit=1
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=152) (actual time=0.080..0.080 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 38kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.004..0.042 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+Planning:
+  Buffers: shared hit=14
+Planning Time: 0.411 ms
+Execution Time: 0.375 ms
+
+=== W28 run 3 ===
+Limit  (cost=94.37..94.50 rows=50 width=176) (actual time=0.389..0.397 rows=50.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=94.37..95.26 rows=354 width=176) (actual time=0.388..0.392 rows=50.00 loops=1)
+        Sort Key: le.rank
+        Sort Method: top-N heapsort  Memory: 31kB
+        Buffers: shared hit=45
+        ->  WindowAgg  (cost=82.44..82.61 rows=354 width=176) (actual time=0.299..0.331 rows=177.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 33kB
+              Buffers: shared hit=45
+              ->  Hash Join  (cost=20.91..78.19 rows=354 width=168) (actual time=0.143..0.261 rows=177.00 loops=1)
+                    Hash Cond: (le."userId" = u.id)
+                    Buffers: shared hit=45
+                    ->  Hash Join  (cost=2.21..58.55 rows=354 width=53) (actual time=0.064..0.149 rows=177.00 loops=1)
+                          Hash Cond: (le."snapshotId" = ls.id)
+                          Buffers: shared hit=34
+                          ->  Seq Scan on "LeaderboardEntry" le  (cost=0.00..53.24 rows=354 width=90) (actual time=0.003..0.091 rows=354.00 loops=1)
+                                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                Rows Removed by Filter: 1062
+                                Buffers: shared hit=32
+                          ->  Hash  (cost=2.16..2.16 rows=4 width=37) (actual time=0.008..0.008 rows=4.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=2
+                                ->  Nested Loop  (cost=1.06..2.16 rows=4 width=37) (actual time=0.006..0.007 rows=4.00 loops=1)
+                                      Join Filter: (ls."snapshotDate" = (max("LeaderboardSnapshot"."snapshotDate")))
+                                      Rows Removed by Join Filter: 8
+                                      Buffers: shared hit=2
+                                      ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.002..0.003 rows=3.00 loops=1)
+                                                  Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                                                  Rows Removed by Filter: 9
+                                                  Buffers: shared hit=1
+                                      ->  Seq Scan on "LeaderboardSnapshot" ls  (cost=0.00..1.04 rows=4 width=41) (actual time=0.001..0.002 rows=12.00 loops=1)
+                                            Buffers: shared hit=1
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=152) (actual time=0.077..0.077 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 38kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.002..0.040 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+Planning:
+  Buffers: shared hit=14
+Planning Time: 0.343 ms
+Execution Time: 0.414 ms

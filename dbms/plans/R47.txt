@@ -1,0 +1,44 @@
+=== R47 run 1 ===
+GroupAggregate  (cost=0.00..3.11 rows=1 width=160) (actual time=0.010..0.011 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Nested Loop Left Join  (cost=0.00..3.10 rows=1 width=188) (actual time=0.006..0.007 rows=1.00 loops=1)
+        Buffers: shared hit=2
+        ->  Seq Scan on "League" l  (cost=0.00..1.55 rows=1 width=156) (actual time=0.002..0.003 rows=1.00 loops=1)
+              Filter: (id = 'league-fixture-1'::text)
+              Rows Removed by Filter: 1
+              Buffers: shared hit=1
+        ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=64) (actual time=0.003..0.003 rows=1.00 loops=1)
+              Filter: ("leagueId" = 'league-fixture-1'::text)
+              Buffers: shared hit=1
+Planning Time: 0.071 ms
+Execution Time: 0.022 ms
+
+=== R47 run 2 ===
+GroupAggregate  (cost=0.00..3.11 rows=1 width=160) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Nested Loop Left Join  (cost=0.00..3.10 rows=1 width=188) (actual time=0.004..0.005 rows=1.00 loops=1)
+        Buffers: shared hit=2
+        ->  Seq Scan on "League" l  (cost=0.00..1.55 rows=1 width=156) (actual time=0.002..0.002 rows=1.00 loops=1)
+              Filter: (id = 'league-fixture-1'::text)
+              Rows Removed by Filter: 1
+              Buffers: shared hit=1
+        ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=64) (actual time=0.001..0.001 rows=1.00 loops=1)
+              Filter: ("leagueId" = 'league-fixture-1'::text)
+              Buffers: shared hit=1
+Planning Time: 0.039 ms
+Execution Time: 0.013 ms
+
+=== R47 run 3 ===
+GroupAggregate  (cost=0.00..3.11 rows=1 width=160) (actual time=0.005..0.005 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Nested Loop Left Join  (cost=0.00..3.10 rows=1 width=188) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Buffers: shared hit=2
+        ->  Seq Scan on "League" l  (cost=0.00..1.55 rows=1 width=156) (actual time=0.002..0.002 rows=1.00 loops=1)
+              Filter: (id = 'league-fixture-1'::text)
+              Rows Removed by Filter: 1
+              Buffers: shared hit=1
+        ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=64) (actual time=0.001..0.001 rows=1.00 loops=1)
+              Filter: ("leagueId" = 'league-fixture-1'::text)
+              Buffers: shared hit=1
+Planning Time: 0.034 ms
+Execution Time: 0.011 ms

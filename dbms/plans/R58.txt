@@ -1,0 +1,20 @@
+=== R58 run 1 ===
+Seq Scan on "CopyTrader"  (cost=0.00..1.58 rows=1 width=65) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Filter: (("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+  Buffers: shared hit=1
+Planning Time: 0.030 ms
+Execution Time: 0.011 ms
+
+=== R58 run 2 ===
+Seq Scan on "CopyTrader"  (cost=0.00..1.58 rows=1 width=65) (actual time=0.003..0.004 rows=1.00 loops=1)
+  Filter: (("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+  Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.007 ms
+
+=== R58 run 3 ===
+Seq Scan on "CopyTrader"  (cost=0.00..1.58 rows=1 width=65) (actual time=0.003..0.003 rows=1.00 loops=1)
+  Filter: (("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+  Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.005 ms

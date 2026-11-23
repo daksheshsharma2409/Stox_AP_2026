@@ -1,0 +1,80 @@
+=== R24 run 1 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..11.34 rows=1 width=172) (actual time=0.017..0.018 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=6
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.002 rows=1.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.003..0.003 rows=1.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Buffers: shared hit=1
+Planning Time: 0.060 ms
+Execution Time: 0.032 ms
+
+=== R24 run 2 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..11.34 rows=1 width=172) (actual time=0.012..0.013 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=6
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.001 rows=1.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Buffers: shared hit=1
+Planning Time: 0.048 ms
+Execution Time: 0.022 ms
+
+=== R24 run 3 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..11.34 rows=1 width=172) (actual time=0.011..0.012 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=6
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.001 rows=1.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Buffers: shared hit=1
+Planning Time: 0.044 ms
+Execution Time: 0.020 ms

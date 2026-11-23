@@ -1,0 +1,31 @@
+=== R7 run 1 ===
+LockRows  (cost=0.00..2.02 rows=1 width=83) (actual time=0.006..0.006 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..2.01 rows=1 width=83) (actual time=0.006..0.006 rows=0.00 loops=1)
+        Filter: ((quantity >= '1'::numeric) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=7
+Planning Time: 0.049 ms
+Execution Time: 0.012 ms
+
+=== R7 run 2 ===
+LockRows  (cost=0.00..2.02 rows=1 width=83) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..2.01 rows=1 width=83) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: ((quantity >= '1'::numeric) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.008 ms
+
+=== R7 run 3 ===
+LockRows  (cost=0.00..2.02 rows=1 width=83) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..2.01 rows=1 width=83) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Filter: ((quantity >= '1'::numeric) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.028 ms
+Execution Time: 0.010 ms

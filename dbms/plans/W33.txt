@@ -1,0 +1,32 @@
+=== W33 run 1 ===
+Insert on "SentimentVote"  (cost=0.00..0.03 rows=1 width=116) (actual time=0.027..0.027 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: SentimentVote_userId_symbol_key
+  Tuples Inserted: 0
+  Conflicting Tuples: 1
+  Buffers: shared hit=12
+  ->  Result  (cost=0.00..0.03 rows=1 width=116) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.010 ms
+Execution Time: 0.039 ms
+
+=== W33 run 2 ===
+Insert on "SentimentVote"  (cost=0.00..0.03 rows=1 width=116) (actual time=0.013..0.013 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: SentimentVote_userId_symbol_key
+  Tuples Inserted: 0
+  Conflicting Tuples: 1
+  Buffers: shared hit=12
+  ->  Result  (cost=0.00..0.03 rows=1 width=116) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Execution Time: 0.018 ms
+
+=== W33 run 3 ===
+Insert on "SentimentVote"  (cost=0.00..0.03 rows=1 width=116) (actual time=0.021..0.021 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: SentimentVote_userId_symbol_key
+  Tuples Inserted: 0
+  Conflicting Tuples: 1
+  Buffers: shared hit=12
+  ->  Result  (cost=0.00..0.03 rows=1 width=116) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Execution Time: 0.028 ms

@@ -1,0 +1,29 @@
+=== R13 run 1 ===
+LockRows  (cost=0.00..1.16 rows=1 width=43) (actual time=0.004..0.005 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "Order"  (cost=0.00..1.15 rows=1 width=43) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: (id = 'order-pending-fixture-1'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.015 ms
+Execution Time: 0.008 ms
+
+=== R13 run 2 ===
+LockRows  (cost=0.00..1.16 rows=1 width=43) (actual time=0.005..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "Order"  (cost=0.00..1.15 rows=1 width=43) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Filter: (id = 'order-pending-fixture-1'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.009 ms
+
+=== R13 run 3 ===
+LockRows  (cost=0.00..1.16 rows=1 width=43) (actual time=0.004..0.005 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "Order"  (cost=0.00..1.15 rows=1 width=43) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: (id = 'order-pending-fixture-1'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.014 ms
+Execution Time: 0.007 ms

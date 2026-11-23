@@ -1,0 +1,40 @@
+=== R45 run 1 ===
+Nested Loop  (cost=0.27..9.34 rows=1 width=292) (actual time=0.011..0.011 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=177) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Filter: ((NOT "isHidden") AND (id = 'post-fixture-1'::text))
+        Buffers: shared hit=1
+  ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.006..0.006 rows=1.00 loops=1)
+        Index Cond: (id = p."authorId")
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=2
+Planning Time: 0.067 ms
+Execution Time: 0.018 ms
+
+=== R45 run 2 ===
+Nested Loop  (cost=0.27..9.34 rows=1 width=292) (actual time=0.008..0.008 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=177) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: ((NOT "isHidden") AND (id = 'post-fixture-1'::text))
+        Buffers: shared hit=1
+  ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+        Index Cond: (id = p."authorId")
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.042 ms
+Execution Time: 0.013 ms
+
+=== R45 run 3 ===
+Nested Loop  (cost=0.27..9.34 rows=1 width=292) (actual time=0.007..0.008 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=177) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: ((NOT "isHidden") AND (id = 'post-fixture-1'::text))
+        Buffers: shared hit=1
+  ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Index Cond: (id = p."authorId")
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.037 ms
+Execution Time: 0.012 ms

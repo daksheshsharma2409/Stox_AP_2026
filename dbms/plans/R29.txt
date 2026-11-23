@@ -1,0 +1,104 @@
+=== R29 run 1 ===
+Sort  (cost=21.62..21.63 rows=1 width=254) (actual time=0.040..0.041 rows=1.00 loops=1)
+  Sort Key: (COALESCE(lm.rank, 2147483647)), p."cashBalance" DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=8
+  ->  Nested Loop  (cost=12.04..21.61 rows=1 width=254) (actual time=0.037..0.039 rows=1.00 loops=1)
+        Buffers: shared hit=8
+        ->  Hash Right Join  (cost=11.77..13.27 rows=1 width=130) (actual time=0.031..0.032 rows=1.00 loops=1)
+              Hash Cond: ("Holding"."portfolioId" = p.id)
+              Buffers: shared hit=5
+              ->  HashAggregate  (cost=1.86..2.57 rows=57 width=69) (actual time=0.013..0.013 rows=1.00 loops=1)
+                    Group Key: "Holding"."portfolioId"
+                    Batches: 1  Memory Usage: 32kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding"  (cost=0.00..1.57 rows=57 width=41) (actual time=0.006..0.007 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+              ->  Hash  (cost=9.90..9.90 rows=1 width=135) (actual time=0.013..0.013 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=4
+                    ->  Nested Loop  (cost=0.27..9.90 rows=1 width=135) (actual time=0.011..0.011 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=120) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                Filter: ("leagueId" = 'league-fixture-1'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=47) (actual time=0.007..0.007 rows=1.00 loops=1)
+                                Index Cond: (id = lm."portfolioId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+        ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Index Cond: (id = lm."userId")
+              Index Searches: 1
+              Buffers: shared hit=3
+Planning Time: 0.172 ms
+Execution Time: 0.065 ms
+
+=== R29 run 2 ===
+Sort  (cost=21.62..21.63 rows=1 width=254) (actual time=0.032..0.033 rows=1.00 loops=1)
+  Sort Key: (COALESCE(lm.rank, 2147483647)), p."cashBalance" DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=8
+  ->  Nested Loop  (cost=12.04..21.61 rows=1 width=254) (actual time=0.029..0.031 rows=1.00 loops=1)
+        Buffers: shared hit=8
+        ->  Hash Right Join  (cost=11.77..13.27 rows=1 width=130) (actual time=0.022..0.024 rows=1.00 loops=1)
+              Hash Cond: ("Holding"."portfolioId" = p.id)
+              Buffers: shared hit=5
+              ->  HashAggregate  (cost=1.86..2.57 rows=57 width=69) (actual time=0.007..0.007 rows=1.00 loops=1)
+                    Group Key: "Holding"."portfolioId"
+                    Batches: 1  Memory Usage: 32kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding"  (cost=0.00..1.57 rows=57 width=41) (actual time=0.002..0.002 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+              ->  Hash  (cost=9.90..9.90 rows=1 width=135) (actual time=0.011..0.011 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=4
+                    ->  Nested Loop  (cost=0.27..9.90 rows=1 width=135) (actual time=0.010..0.010 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=120) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                Filter: ("leagueId" = 'league-fixture-1'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=47) (actual time=0.006..0.006 rows=1.00 loops=1)
+                                Index Cond: (id = lm."portfolioId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+        ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+              Index Cond: (id = lm."userId")
+              Index Searches: 1
+              Buffers: shared hit=3
+Planning Time: 0.163 ms
+Execution Time: 0.055 ms
+
+=== R29 run 3 ===
+Sort  (cost=21.62..21.63 rows=1 width=254) (actual time=0.024..0.025 rows=1.00 loops=1)
+  Sort Key: (COALESCE(lm.rank, 2147483647)), p."cashBalance" DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=8
+  ->  Nested Loop  (cost=12.04..21.61 rows=1 width=254) (actual time=0.022..0.024 rows=1.00 loops=1)
+        Buffers: shared hit=8
+        ->  Hash Right Join  (cost=11.77..13.27 rows=1 width=130) (actual time=0.017..0.018 rows=1.00 loops=1)
+              Hash Cond: ("Holding"."portfolioId" = p.id)
+              Buffers: shared hit=5
+              ->  HashAggregate  (cost=1.86..2.57 rows=57 width=69) (actual time=0.005..0.005 rows=1.00 loops=1)
+                    Group Key: "Holding"."portfolioId"
+                    Batches: 1  Memory Usage: 32kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding"  (cost=0.00..1.57 rows=57 width=41) (actual time=0.001..0.002 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+              ->  Hash  (cost=9.90..9.90 rows=1 width=135) (actual time=0.008..0.008 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=4
+                    ->  Nested Loop  (cost=0.27..9.90 rows=1 width=135) (actual time=0.007..0.007 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.54 rows=1 width=120) (actual time=0.002..0.002 rows=1.00 loops=1)
+                                Filter: ("leagueId" = 'league-fixture-1'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=47) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                Index Cond: (id = lm."portfolioId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+        ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Index Cond: (id = lm."userId")
+              Index Searches: 1
+              Buffers: shared hit=3
+Planning Time: 0.129 ms
+Execution Time: 0.041 ms

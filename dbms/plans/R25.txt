@@ -1,0 +1,122 @@
+=== R25 run 1 ===
+Limit  (cost=75.89..76.02 rows=50 width=197) (actual time=0.134..0.135 rows=2.00 loops=1)
+  Buffers: shared hit=21
+  InitPlan 1
+    ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.006..0.006 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.003..0.005 rows=3.00 loops=1)
+                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                Rows Removed by Filter: 9
+                Buffers: shared hit=1
+  ->  Sort  (cost=74.82..75.04 rows=89 width=197) (actual time=0.133..0.134 rows=2.00 loops=1)
+        Sort Key: le."returnPct" DESC, u.id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=21
+        ->  Hash Join  (cost=56.61..71.94 rows=89 width=197) (actual time=0.072..0.121 rows=2.00 loops=1)
+              Hash Cond: (u.id = le."userId")
+              Buffers: shared hit=21
+              ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.003..0.027 rows=342.00 loops=1)
+                    Buffers: shared hit=11
+              ->  Hash  (cost=55.50..55.50 rows=89 width=45) (actual time=0.066..0.067 rows=2.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=10
+                    ->  Bitmap Heap Scan on "LeaderboardEntry" le  (cost=19.51..55.50 rows=89 width=45) (actual time=0.045..0.065 rows=2.00 loops=1)
+                          Recheck Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                          Filter: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) OR (ANY ("userId" = (hashed SubPlan 2).col1)))
+                          Rows Removed by Filter: 175
+                          Heap Blocks: exact=5
+                          Buffers: shared hit=10
+                          ->  Bitmap Index Scan on "LeaderboardEntry_scope_period_snapshotDate_rank_idx"  (cost=0.00..18.49 rows=177 width=0) (actual time=0.027..0.027 rows=177.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                                Index Searches: 1
+                                Buffers: shared hit=4
+                          SubPlan 2
+                            ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=32) (actual time=0.002..0.002 rows=1.00 loops=1)
+                                  Filter: ("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                  Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.323 ms
+Execution Time: 0.157 ms
+
+=== R25 run 2 ===
+Limit  (cost=75.89..76.02 rows=50 width=197) (actual time=0.096..0.096 rows=2.00 loops=1)
+  Buffers: shared hit=21
+  InitPlan 1
+    ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.005..0.005 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.003..0.003 rows=3.00 loops=1)
+                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                Rows Removed by Filter: 9
+                Buffers: shared hit=1
+  ->  Sort  (cost=74.82..75.04 rows=89 width=197) (actual time=0.095..0.096 rows=2.00 loops=1)
+        Sort Key: le."returnPct" DESC, u.id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=21
+        ->  Hash Join  (cost=56.61..71.94 rows=89 width=197) (actual time=0.052..0.091 rows=2.00 loops=1)
+              Hash Cond: (u.id = le."userId")
+              Buffers: shared hit=21
+              ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.003..0.022 rows=342.00 loops=1)
+                    Buffers: shared hit=11
+              ->  Hash  (cost=55.50..55.50 rows=89 width=45) (actual time=0.048..0.048 rows=2.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=10
+                    ->  Bitmap Heap Scan on "LeaderboardEntry" le  (cost=19.51..55.50 rows=89 width=45) (actual time=0.028..0.047 rows=2.00 loops=1)
+                          Recheck Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                          Filter: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) OR (ANY ("userId" = (hashed SubPlan 2).col1)))
+                          Rows Removed by Filter: 175
+                          Heap Blocks: exact=5
+                          Buffers: shared hit=10
+                          ->  Bitmap Index Scan on "LeaderboardEntry_scope_period_snapshotDate_rank_idx"  (cost=0.00..18.49 rows=177 width=0) (actual time=0.015..0.015 rows=177.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                                Index Searches: 1
+                                Buffers: shared hit=4
+                          SubPlan 2
+                            ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=32) (actual time=0.002..0.002 rows=1.00 loops=1)
+                                  Filter: ("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                  Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.282 ms
+Execution Time: 0.113 ms
+
+=== R25 run 3 ===
+Limit  (cost=75.89..76.02 rows=50 width=197) (actual time=0.094..0.095 rows=2.00 loops=1)
+  Buffers: shared hit=21
+  InitPlan 1
+    ->  Aggregate  (cost=1.06..1.07 rows=1 width=4) (actual time=0.004..0.004 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "LeaderboardSnapshot"  (cost=0.00..1.06 rows=1 width=4) (actual time=0.002..0.003 rows=3.00 loops=1)
+                Filter: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod"))
+                Rows Removed by Filter: 9
+                Buffers: shared hit=1
+  ->  Sort  (cost=74.82..75.04 rows=89 width=197) (actual time=0.093..0.094 rows=2.00 loops=1)
+        Sort Key: le."returnPct" DESC, u.id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=21
+        ->  Hash Join  (cost=56.61..71.94 rows=89 width=197) (actual time=0.050..0.091 rows=2.00 loops=1)
+              Hash Cond: (u.id = le."userId")
+              Buffers: shared hit=21
+              ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=152) (actual time=0.002..0.020 rows=342.00 loops=1)
+                    Buffers: shared hit=11
+              ->  Hash  (cost=55.50..55.50 rows=89 width=45) (actual time=0.046..0.046 rows=2.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=10
+                    ->  Bitmap Heap Scan on "LeaderboardEntry" le  (cost=19.51..55.50 rows=89 width=45) (actual time=0.025..0.045 rows=2.00 loops=1)
+                          Recheck Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                          Filter: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) OR (ANY ("userId" = (hashed SubPlan 2).col1)))
+                          Rows Removed by Filter: 175
+                          Heap Blocks: exact=5
+                          Buffers: shared hit=10
+                          ->  Bitmap Index Scan on "LeaderboardEntry_scope_period_snapshotDate_rank_idx"  (cost=0.00..18.49 rows=177 width=0) (actual time=0.013..0.013 rows=177.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("snapshotDate" = (InitPlan 1).col1))
+                                Index Searches: 1
+                                Buffers: shared hit=4
+                          SubPlan 2
+                            ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=32) (actual time=0.001..0.002 rows=1.00 loops=1)
+                                  Filter: ("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                  Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.271 ms
+Execution Time: 0.108 ms

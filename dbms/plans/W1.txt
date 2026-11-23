@@ -1,0 +1,20 @@
+=== W1 run 1 ===
+Insert on "User"  (cost=0.00..0.03 rows=1 width=257) (actual time=0.165..0.166 rows=1.00 loops=1)
+  Buffers: shared hit=8 dirtied=1
+  ->  Result  (cost=0.00..0.03 rows=1 width=257) (actual time=0.013..0.014 rows=1.00 loops=1)
+Planning Time: 0.022 ms
+Execution Time: 0.194 ms
+
+=== W1 run 2 ===
+Insert on "User"  (cost=0.00..0.03 rows=1 width=257) (actual time=0.049..0.050 rows=1.00 loops=1)
+  Buffers: shared hit=7 dirtied=1
+  ->  Result  (cost=0.00..0.03 rows=1 width=257) (actual time=0.004..0.004 rows=1.00 loops=1)
+Planning Time: 0.018 ms
+Execution Time: 0.064 ms
+
+=== W1 run 3 ===
+Insert on "User"  (cost=0.00..0.03 rows=1 width=257) (actual time=0.034..0.035 rows=1.00 loops=1)
+  Buffers: shared hit=8 dirtied=1
+  ->  Result  (cost=0.00..0.03 rows=1 width=257) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Execution Time: 0.045 ms

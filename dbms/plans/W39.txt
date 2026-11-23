@@ -1,0 +1,26 @@
+=== W39 run 1 ===
+Delete on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.006..0.007 rows=1.00 loops=1)
+  Buffers: shared hit=3
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.002..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.016 ms
+Execution Time: 0.010 ms
+
+=== W39 run 2 ===
+Delete on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=3
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.002..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.010 ms
+
+=== W39 run 3 ===
+Delete on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.004..0.004 rows=1.00 loops=1)
+  Buffers: shared hit=3
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=6) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.015 ms
+Execution Time: 0.007 ms

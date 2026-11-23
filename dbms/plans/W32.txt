@@ -1,0 +1,35 @@
+=== W32 run 1 ===
+Insert on "UserPreference"  (cost=0.00..0.03 rows=1 width=82) (actual time=0.089..0.089 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: UserPreference_userId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=9
+  ->  Result  (cost=0.00..0.03 rows=1 width=82) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Trigger for constraint UserPreference_userId_fkey: time=0.056 calls=1
+Execution Time: 0.161 ms
+
+=== W32 run 2 ===
+Insert on "UserPreference"  (cost=0.00..0.03 rows=1 width=82) (actual time=0.021..0.021 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: UserPreference_userId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=6
+  ->  Result  (cost=0.00..0.03 rows=1 width=82) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.008 ms
+Trigger for constraint UserPreference_userId_fkey: time=0.025 calls=1
+Execution Time: 0.053 ms
+
+=== W32 run 3 ===
+Insert on "UserPreference"  (cost=0.00..0.03 rows=1 width=82) (actual time=0.015..0.015 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: UserPreference_userId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=6
+  ->  Result  (cost=0.00..0.03 rows=1 width=82) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Trigger for constraint UserPreference_userId_fkey: time=0.025 calls=1
+Execution Time: 0.044 ms

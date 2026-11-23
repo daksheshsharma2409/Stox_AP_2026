@@ -1,0 +1,74 @@
+=== R16 run 1 ===
+GroupAggregate  (cost=9.46..9.53 rows=1 width=140) (actual time=0.011..0.012 rows=0.00 loops=1)
+  Group Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.46..9.47 rows=1 width=48) (actual time=0.011..0.012 rows=0.00 loops=1)
+        Sort Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Hash Join  (cost=8.30..9.45 rows=1 width=48) (actual time=0.011..0.011 rows=0.00 loops=1)
+              Hash Cond: (t."portfolioId" = p.id)
+              Buffers: shared hit=4
+              ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=61) (actual time=0.003..0.003 rows=16.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.005..0.005 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=3
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.003..0.003 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=12
+Planning Time: 0.120 ms
+Execution Time: 0.026 ms
+
+=== R16 run 2 ===
+GroupAggregate  (cost=9.46..9.53 rows=1 width=140) (actual time=0.010..0.010 rows=0.00 loops=1)
+  Group Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.46..9.47 rows=1 width=48) (actual time=0.010..0.010 rows=0.00 loops=1)
+        Sort Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Hash Join  (cost=8.30..9.45 rows=1 width=48) (actual time=0.009..0.009 rows=0.00 loops=1)
+              Hash Cond: (t."portfolioId" = p.id)
+              Buffers: shared hit=4
+              ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=61) (actual time=0.003..0.003 rows=16.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.004..0.004 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=3
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.003..0.003 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.093 ms
+Execution Time: 0.021 ms
+
+=== R16 run 3 ===
+GroupAggregate  (cost=9.46..9.53 rows=1 width=140) (actual time=0.009..0.009 rows=0.00 loops=1)
+  Group Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.46..9.47 rows=1 width=48) (actual time=0.009..0.009 rows=0.00 loops=1)
+        Sort Key: (to_char(t."executedAt", 'YYYY-MM'::text))
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Hash Join  (cost=8.30..9.45 rows=1 width=48) (actual time=0.009..0.009 rows=0.00 loops=1)
+              Hash Cond: (t."portfolioId" = p.id)
+              Buffers: shared hit=4
+              ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=61) (actual time=0.002..0.003 rows=16.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.004..0.004 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=3
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.003..0.003 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.088 ms
+Execution Time: 0.020 ms

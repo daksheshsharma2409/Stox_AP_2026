@@ -1,0 +1,29 @@
+=== W54 run 1 ===
+Update on "Trade"  (cost=0.00..1.15 rows=0 width=0) (actual time=0.069..0.069 rows=0.00 loops=1)
+  Buffers: shared hit=21
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=14) (actual time=0.005..0.006 rows=1.00 loops=1)
+        Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+        Rows Removed by Filter: 15
+        Buffers: shared hit=1
+Planning Time: 0.025 ms
+Execution Time: 0.092 ms
+
+=== W54 run 2 ===
+Update on "Trade"  (cost=0.00..1.15 rows=0 width=0) (actual time=0.030..0.030 rows=0.00 loops=1)
+  Buffers: shared hit=18
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=14) (actual time=0.004..0.005 rows=1.00 loops=1)
+        Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+        Rows Removed by Filter: 15
+        Buffers: shared hit=1
+Planning Time: 0.024 ms
+Execution Time: 0.036 ms
+
+=== W54 run 3 ===
+Update on "Trade"  (cost=0.00..1.15 rows=0 width=0) (actual time=0.032..0.032 rows=0.00 loops=1)
+  Buffers: shared hit=18
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=14) (actual time=0.003..0.005 rows=1.00 loops=1)
+        Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+        Rows Removed by Filter: 15
+        Buffers: shared hit=1
+Planning Time: 0.018 ms
+Execution Time: 0.036 ms

@@ -1,0 +1,26 @@
+=== W48 run 1 ===
+Update on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.016..0.016 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: (id = 'lmember-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.015 ms
+Execution Time: 0.030 ms
+
+=== W48 run 2 ===
+Update on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.010..0.011 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: (id = 'lmember-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.016 ms
+
+=== W48 run 3 ===
+Update on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.007..0.007 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=30) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: (id = 'lmember-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.013 ms
+Execution Time: 0.011 ms

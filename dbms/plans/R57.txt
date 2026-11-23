@@ -1,0 +1,38 @@
+=== R57 run 1 ===
+Limit  (cost=1.50..1.50 rows=1 width=128) (actual time=0.007..0.007 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.50..1.50 rows=1 width=128) (actual time=0.007..0.007 rows=1.00 loops=1)
+        Sort Key: id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=128) (actual time=0.003..0.003 rows=1.00 loops=1)
+              Filter: ("isActive" AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+              Buffers: shared hit=1
+Planning Time: 0.030 ms
+Execution Time: 0.012 ms
+
+=== R57 run 2 ===
+Limit  (cost=1.50..1.50 rows=1 width=128) (actual time=0.017..0.018 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.50..1.50 rows=1 width=128) (actual time=0.017..0.017 rows=1.00 loops=1)
+        Sort Key: id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=128) (actual time=0.012..0.012 rows=1.00 loops=1)
+              Filter: ("isActive" AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+              Buffers: shared hit=1
+Planning Time: 0.062 ms
+Execution Time: 0.030 ms
+
+=== R57 run 3 ===
+Limit  (cost=1.50..1.50 rows=1 width=128) (actual time=0.007..0.007 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.50..1.50 rows=1 width=128) (actual time=0.006..0.007 rows=1.00 loops=1)
+        Sort Key: id
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=128) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Filter: ("isActive" AND ("copiedId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+              Buffers: shared hit=1
+Planning Time: 0.034 ms
+Execution Time: 0.012 ms

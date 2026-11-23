@@ -1,0 +1,26 @@
+=== W11 run 1 ===
+Insert on "Order"  (cost=0.00..0.03 rows=1 width=324) (actual time=0.280..0.281 rows=1.00 loops=1)
+  Buffers: shared hit=118
+  ->  Result  (cost=0.00..0.03 rows=1 width=324) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.016 ms
+Trigger for constraint Order_portfolioId_fkey: time=0.050 calls=1
+Trigger for constraint Order_copyTradeExecutionId_fkey: time=0.028 calls=1
+Execution Time: 0.369 ms
+
+=== W11 run 2 ===
+Insert on "Order"  (cost=0.00..0.03 rows=1 width=324) (actual time=0.019..0.019 rows=1.00 loops=1)
+  Buffers: shared hit=11
+  ->  Result  (cost=0.00..0.03 rows=1 width=324) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.012 ms
+Trigger for constraint Order_portfolioId_fkey: time=0.025 calls=1
+Trigger for constraint Order_copyTradeExecutionId_fkey: time=0.001 calls=1
+Execution Time: 0.054 ms
+
+=== W11 run 3 ===
+Insert on "Order"  (cost=0.00..0.03 rows=1 width=324) (actual time=0.020..0.020 rows=1.00 loops=1)
+  Buffers: shared hit=11 dirtied=1
+  ->  Result  (cost=0.00..0.03 rows=1 width=324) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.010 ms
+Trigger for constraint Order_portfolioId_fkey: time=0.023 calls=1
+Trigger for constraint Order_copyTradeExecutionId_fkey: time=0.001 calls=1
+Execution Time: 0.050 ms

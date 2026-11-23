@@ -1,0 +1,31 @@
+=== W27 run 1 ===
+Delete on "Follow"  (cost=0.00..1.00 rows=0 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Follow"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Filter: (("followerId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text) AND ("followingId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 1
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=6
+Planning Time: 0.209 ms
+Execution Time: 0.009 ms
+
+=== W27 run 2 ===
+Delete on "Follow"  (cost=0.00..1.00 rows=0 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Follow"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Filter: (("followerId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text) AND ("followingId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 1
+        Buffers: shared hit=1
+Planning Time: 0.013 ms
+Execution Time: 0.004 ms
+
+=== W27 run 3 ===
+Delete on "Follow"  (cost=0.00..1.00 rows=0 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Follow"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Filter: (("followerId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text) AND ("followingId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 1
+        Buffers: shared hit=1
+Planning Time: 0.013 ms
+Execution Time: 0.004 ms

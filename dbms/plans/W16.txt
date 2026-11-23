@@ -1,0 +1,26 @@
+=== W16 run 1 ===
+Update on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.032..0.032 rows=1.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.003..0.004 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.024 ms
+Execution Time: 0.049 ms
+
+=== W16 run 2 ===
+Update on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.022..0.023 rows=1.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.004..0.004 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.025 ms
+Execution Time: 0.029 ms
+
+=== W16 run 3 ===
+Update on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.015..0.015 rows=1.00 loops=1)
+  Buffers: shared hit=11
+  ->  Seq Scan on "Alert"  (cost=0.00..1.50 rows=1 width=66) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'alert-fixture-1'::text) AND (status = 'ACTIVE'::"AlertStatus"))
+        Buffers: shared hit=1
+Planning Time: 0.020 ms
+Execution Time: 0.020 ms

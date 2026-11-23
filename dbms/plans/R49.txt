@@ -1,0 +1,26 @@
+=== R49 run 1 ===
+Aggregate  (cost=1.54..1.55 rows=1 width=4) (actual time=0.003..0.003 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: ("leagueId" = 'league-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.008 ms
+
+=== R49 run 2 ===
+Aggregate  (cost=1.54..1.55 rows=1 width=4) (actual time=0.002..0.003 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: ("leagueId" = 'league-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.014 ms
+Execution Time: 0.006 ms
+
+=== R49 run 3 ===
+Aggregate  (cost=1.54..1.55 rows=1 width=4) (actual time=0.002..0.002 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "LeagueMember"  (cost=0.00..1.54 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: ("leagueId" = 'league-fixture-1'::text)
+        Buffers: shared hit=1
+Planning Time: 0.013 ms
+Execution Time: 0.005 ms

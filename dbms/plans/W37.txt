@@ -1,0 +1,32 @@
+=== W37 run 1 ===
+Update on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.013..0.013 rows=1.00 loops=1)
+  Buffers: shared hit=7
+  ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.007..0.007 rows=1.00 loops=1)
+        Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning Time: 0.021 ms
+Execution Time: 0.019 ms
+
+=== W37 run 2 ===
+Update on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.016..0.016 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.008..0.009 rows=1.00 loops=1)
+        Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.031 ms
+Execution Time: 0.023 ms
+
+=== W37 run 3 ===
+Update on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.012..0.012 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.007..0.007 rows=1.00 loops=1)
+        Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.018 ms
+Execution Time: 0.017 ms

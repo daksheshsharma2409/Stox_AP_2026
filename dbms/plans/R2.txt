@@ -1,0 +1,25 @@
+=== R2 run 1 ===
+Index Scan using "User_pkey" on "User"  (cost=0.27..8.29 rows=1 width=220) (actual time=0.011..0.011 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.054 ms
+Execution Time: 0.017 ms
+
+=== R2 run 2 ===
+Index Scan using "User_pkey" on "User"  (cost=0.27..8.29 rows=1 width=220) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=3
+Planning Time: 0.016 ms
+Execution Time: 0.010 ms
+
+=== R2 run 3 ===
+Index Scan using "User_pkey" on "User"  (cost=0.27..8.29 rows=1 width=220) (actual time=0.005..0.005 rows=1.00 loops=1)
+  Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+  Index Searches: 1
+  Buffers: shared hit=3
+Planning Time: 0.014 ms
+Execution Time: 0.008 ms

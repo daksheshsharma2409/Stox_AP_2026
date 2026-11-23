@@ -1,0 +1,76 @@
+=== R10 run 1 ===
+Limit  (cost=9.47..9.48 rows=1 width=147) (actual time=0.022..0.023 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.47..9.48 rows=1 width=147) (actual time=0.021..0.022 rows=1.00 loops=1)
+        Sort Key: o."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  WindowAgg  (cost=0.27..9.46 rows=1 width=147) (actual time=0.019..0.019 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Nested Loop  (cost=0.27..9.45 rows=1 width=139) (actual time=0.011..0.013 rows=1.00 loops=1)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Order" o  (cost=0.00..1.15 rows=1 width=176) (actual time=0.006..0.007 rows=1.00 loops=1)
+                          Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Rows Removed by Filter: 16
+                          Buffers: shared hit=1
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.004..0.005 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=64
+Planning Time: 0.482 ms
+Execution Time: 0.040 ms
+
+=== R10 run 2 ===
+Limit  (cost=9.47..9.48 rows=1 width=147) (actual time=0.013..0.014 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.47..9.48 rows=1 width=147) (actual time=0.013..0.014 rows=1.00 loops=1)
+        Sort Key: o."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  WindowAgg  (cost=0.27..9.46 rows=1 width=147) (actual time=0.012..0.012 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Nested Loop  (cost=0.27..9.45 rows=1 width=139) (actual time=0.009..0.010 rows=1.00 loops=1)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Order" o  (cost=0.00..1.15 rows=1 width=176) (actual time=0.004..0.005 rows=1.00 loops=1)
+                          Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Rows Removed by Filter: 16
+                          Buffers: shared hit=1
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.003..0.004 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning Time: 0.061 ms
+Execution Time: 0.025 ms
+
+=== R10 run 3 ===
+Limit  (cost=9.47..9.48 rows=1 width=147) (actual time=0.011..0.012 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Sort  (cost=9.47..9.48 rows=1 width=147) (actual time=0.011..0.011 rows=1.00 loops=1)
+        Sort Key: o."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  WindowAgg  (cost=0.27..9.46 rows=1 width=147) (actual time=0.010..0.010 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Nested Loop  (cost=0.27..9.45 rows=1 width=139) (actual time=0.007..0.008 rows=1.00 loops=1)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Order" o  (cost=0.00..1.15 rows=1 width=176) (actual time=0.004..0.004 rows=1.00 loops=1)
+                          Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Rows Removed by Filter: 16
+                          Buffers: shared hit=1
+                    ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.003..0.003 rows=1.00 loops=1)
+                          Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Filter: (id = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+Planning Time: 0.053 ms
+Execution Time: 0.021 ms

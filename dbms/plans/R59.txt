@@ -1,0 +1,110 @@
+=== R59 run 1 ===
+HashAggregate  (cost=35.13..37.77 rows=211 width=149) (actual time=0.654..0.687 rows=211.00 loops=1)
+  Group Key: p.id, lm.id
+  Batches: 1  Memory Usage: 120kB
+  Buffers: shared hit=19
+  ->  Hash Left Join  (cost=22.95..33.55 rows=211 width=120) (actual time=0.423..0.578 rows=213.00 loops=1)
+        Hash Cond: (p.id = lm."portfolioId")
+        Buffers: shared hit=19
+        ->  Hash Left Join  (cost=20.98..31.01 rows=211 width=88) (actual time=0.132..0.256 rows=213.00 loops=1)
+              Hash Cond: (p.id = h."portfolioId")
+              Buffers: shared hit=18
+              ->  Hash Join  (cost=18.70..27.37 rows=211 width=84) (actual time=0.120..0.208 rows=211.00 loops=1)
+                    Hash Cond: (p."userId" = u.id)
+                    Buffers: shared hit=17
+                    ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=84) (actual time=0.006..0.040 rows=211.00 loops=1)
+                          Buffers: shared hit=6
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=37) (actual time=0.111..0.112 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=37) (actual time=0.005..0.070 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+              ->  Hash  (cost=1.57..1.57 rows=57 width=41) (actual time=0.010..0.010 rows=3.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=41) (actual time=0.004..0.004 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+        ->  Hash  (cost=1.43..1.43 rows=43 width=64) (actual time=0.288..0.288 rows=1.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=1
+              ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.43 rows=43 width=64) (actual time=0.281..0.281 rows=1.00 loops=1)
+                    Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.346 ms
+Execution Time: 0.727 ms
+
+=== R59 run 2 ===
+HashAggregate  (cost=35.13..37.77 rows=211 width=149) (actual time=0.374..0.406 rows=211.00 loops=1)
+  Group Key: p.id, lm.id
+  Batches: 1  Memory Usage: 120kB
+  Buffers: shared hit=19
+  ->  Hash Left Join  (cost=22.95..33.55 rows=211 width=120) (actual time=0.171..0.301 rows=213.00 loops=1)
+        Hash Cond: (p.id = lm."portfolioId")
+        Buffers: shared hit=19
+        ->  Hash Left Join  (cost=20.98..31.01 rows=211 width=88) (actual time=0.159..0.261 rows=213.00 loops=1)
+              Hash Cond: (p.id = h."portfolioId")
+              Buffers: shared hit=18
+              ->  Hash Join  (cost=18.70..27.37 rows=211 width=84) (actual time=0.150..0.223 rows=211.00 loops=1)
+                    Hash Cond: (p."userId" = u.id)
+                    Buffers: shared hit=17
+                    ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=84) (actual time=0.021..0.053 rows=211.00 loops=1)
+                          Buffers: shared hit=6
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=37) (actual time=0.123..0.123 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=37) (actual time=0.021..0.082 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+              ->  Hash  (cost=1.57..1.57 rows=57 width=41) (actual time=0.007..0.007 rows=3.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=41) (actual time=0.004..0.005 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+        ->  Hash  (cost=1.43..1.43 rows=43 width=64) (actual time=0.007..0.008 rows=1.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=1
+              ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.43 rows=43 width=64) (actual time=0.006..0.007 rows=1.00 loops=1)
+                    Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.356 ms
+Execution Time: 0.641 ms
+
+=== R59 run 3 ===
+HashAggregate  (cost=35.13..37.77 rows=211 width=149) (actual time=0.319..0.350 rows=211.00 loops=1)
+  Group Key: p.id, lm.id
+  Batches: 1  Memory Usage: 120kB
+  Buffers: shared hit=19
+  ->  Hash Left Join  (cost=22.95..33.55 rows=211 width=120) (actual time=0.126..0.253 rows=213.00 loops=1)
+        Hash Cond: (p.id = lm."portfolioId")
+        Buffers: shared hit=19
+        ->  Hash Left Join  (cost=20.98..31.01 rows=211 width=88) (actual time=0.120..0.219 rows=213.00 loops=1)
+              Hash Cond: (p.id = h."portfolioId")
+              Buffers: shared hit=18
+              ->  Hash Join  (cost=18.70..27.37 rows=211 width=84) (actual time=0.113..0.185 rows=211.00 loops=1)
+                    Hash Cond: (p."userId" = u.id)
+                    Buffers: shared hit=17
+                    ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=84) (actual time=0.010..0.040 rows=211.00 loops=1)
+                          Buffers: shared hit=6
+                    ->  Hash  (cost=14.42..14.42 rows=342 width=37) (actual time=0.101..0.101 rows=342.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=11
+                          ->  Seq Scan on "User" u  (cost=0.00..14.42 rows=342 width=37) (actual time=0.008..0.061 rows=342.00 loops=1)
+                                Filter: (NOT "isSuspended")
+                                Buffers: shared hit=11
+              ->  Hash  (cost=1.57..1.57 rows=57 width=41) (actual time=0.005..0.005 rows=3.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=41) (actual time=0.003..0.003 rows=3.00 loops=1)
+                          Buffers: shared hit=1
+        ->  Hash  (cost=1.43..1.43 rows=43 width=64) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=1
+              ->  Seq Scan on "LeagueMember" lm  (cost=0.00..1.43 rows=43 width=64) (actual time=0.003..0.003 rows=1.00 loops=1)
+                    Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.349 ms
+Execution Time: 0.393 ms

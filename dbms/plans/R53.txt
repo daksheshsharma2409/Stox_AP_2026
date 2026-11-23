@@ -1,0 +1,65 @@
+=== R53 run 1 ===
+Nested Loop  (cost=0.27..10.78 rows=1 width=188) (actual time=0.019..0.021 rows=1.00 loops=1)
+  Join Filter: (t."orderId" = o.id)
+  Rows Removed by Join Filter: 13
+  Buffers: shared hit=5
+  ->  Nested Loop  (cost=0.27..9.51 rows=1 width=184) (actual time=0.012..0.013 rows=1.00 loops=1)
+        Buffers: shared hit=4
+        ->  Seq Scan on "Trade" t  (cost=0.00..1.15 rows=1 width=147) (actual time=0.003..0.005 rows=1.00 loops=1)
+              Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+              Rows Removed by Filter: 15
+              Buffers: shared hit=1
+        ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=74) (actual time=0.007..0.007 rows=1.00 loops=1)
+              Index Cond: (id = t."portfolioId")
+              Index Searches: 1
+              Buffers: shared hit=3
+  ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=41) (actual time=0.004..0.005 rows=14.00 loops=1)
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=19
+Planning Time: 0.203 ms
+Execution Time: 0.033 ms
+
+=== R53 run 2 ===
+Nested Loop  (cost=0.27..10.78 rows=1 width=188) (actual time=0.015..0.017 rows=1.00 loops=1)
+  Join Filter: (t."orderId" = o.id)
+  Rows Removed by Join Filter: 13
+  Buffers: shared hit=5
+  ->  Nested Loop  (cost=0.27..9.51 rows=1 width=184) (actual time=0.009..0.011 rows=1.00 loops=1)
+        Buffers: shared hit=4
+        ->  Seq Scan on "Trade" t  (cost=0.00..1.15 rows=1 width=147) (actual time=0.003..0.004 rows=1.00 loops=1)
+              Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+              Rows Removed by Filter: 15
+              Buffers: shared hit=1
+        ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=74) (actual time=0.005..0.005 rows=1.00 loops=1)
+              Index Cond: (id = t."portfolioId")
+              Index Searches: 1
+              Buffers: shared hit=3
+  ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=41) (actual time=0.003..0.004 rows=14.00 loops=1)
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=19
+Planning Time: 0.158 ms
+Execution Time: 0.026 ms
+
+=== R53 run 3 ===
+Nested Loop  (cost=0.27..10.78 rows=1 width=188) (actual time=0.013..0.014 rows=1.00 loops=1)
+  Join Filter: (t."orderId" = o.id)
+  Rows Removed by Join Filter: 13
+  Buffers: shared hit=5
+  ->  Nested Loop  (cost=0.27..9.51 rows=1 width=184) (actual time=0.008..0.009 rows=1.00 loops=1)
+        Buffers: shared hit=4
+        ->  Seq Scan on "Trade" t  (cost=0.00..1.15 rows=1 width=147) (actual time=0.003..0.004 rows=1.00 loops=1)
+              Filter: (id = 'd516c917-c1a9-462b-9932-89c21791549e'::text)
+              Rows Removed by Filter: 15
+              Buffers: shared hit=1
+        ->  Index Scan using "Portfolio_pkey" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=74) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Index Cond: (id = t."portfolioId")
+              Index Searches: 1
+              Buffers: shared hit=3
+  ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=41) (actual time=0.002..0.004 rows=14.00 loops=1)
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=19
+Planning Time: 0.129 ms
+Execution Time: 0.021 ms

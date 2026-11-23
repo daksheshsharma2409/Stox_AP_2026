@@ -1,0 +1,29 @@
+=== W19 run 1 ===
+Update on "Notification"  (cost=0.27..8.30 rows=0 width=0) (actual time=0.005..0.005 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Index Cond: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("isRead" = false))
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.021 ms
+Execution Time: 0.009 ms
+
+=== W19 run 2 ===
+Update on "Notification"  (cost=0.27..8.30 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Index Cond: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("isRead" = false))
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.018 ms
+Execution Time: 0.008 ms
+
+=== W19 run 3 ===
+Update on "Notification"  (cost=0.27..8.30 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.30 rows=1 width=15) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Index Cond: (("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("isRead" = false))
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.018 ms
+Execution Time: 0.008 ms

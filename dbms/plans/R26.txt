@@ -1,0 +1,29 @@
+=== R26 run 1 ===
+Limit  (cost=0.28..9.46 rows=1 width=16) (actual time=0.028..0.028 rows=1.00 loops=1)
+  Buffers: shared hit=10
+  ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=16) (actual time=0.027..0.027 rows=1.00 loops=1)
+        Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Index Searches: 2
+        Buffers: shared hit=10
+Planning Time: 0.035 ms
+Execution Time: 0.032 ms
+
+=== R26 run 2 ===
+Limit  (cost=0.28..9.46 rows=1 width=16) (actual time=0.009..0.009 rows=1.00 loops=1)
+  Buffers: shared hit=5
+  ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=16) (actual time=0.009..0.009 rows=1.00 loops=1)
+        Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Index Searches: 2
+        Buffers: shared hit=5
+Planning Time: 0.028 ms
+Execution Time: 0.012 ms
+
+=== R26 run 3 ===
+Limit  (cost=0.28..9.46 rows=1 width=16) (actual time=0.008..0.008 rows=1.00 loops=1)
+  Buffers: shared hit=5
+  ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=16) (actual time=0.008..0.008 rows=1.00 loops=1)
+        Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'DAILY'::"LeaderboardPeriod") AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Index Searches: 2
+        Buffers: shared hit=5
+Planning Time: 0.027 ms
+Execution Time: 0.011 ms

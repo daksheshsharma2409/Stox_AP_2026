@@ -1,0 +1,95 @@
+=== R42 run 1 ===
+Limit  (cost=19.29..19.32 rows=12 width=340) (actual time=0.153..0.155 rows=17.00 loops=1)
+  Buffers: shared hit=58
+  ->  Sort  (cost=19.29..19.32 rows=12 width=340) (actual time=0.153..0.154 rows=17.00 loops=1)
+        Sort Key: o."createdAt" DESC, o.id
+        Sort Method: quicksort  Memory: 33kB
+        Buffers: shared hit=58
+        ->  WindowAgg  (cost=17.61..19.07 rows=12 width=340) (actual time=0.138..0.143 rows=17.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 21kB
+              Buffers: shared hit=58
+              ->  Nested Loop  (cost=1.54..18.92 rows=12 width=332) (actual time=0.024..0.129 rows=17.00 loops=1)
+                    Buffers: shared hit=58
+                    ->  Hash Join  (cost=1.27..11.35 rows=12 width=271) (actual time=0.018..0.054 rows=17.00 loops=1)
+                          Hash Cond: (p.id = o."portfolioId")
+                          Buffers: shared hit=7
+                          ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=92) (actual time=0.003..0.021 rows=211.00 loops=1)
+                                Buffers: shared hit=6
+                          ->  Hash  (cost=1.12..1.12 rows=12 width=216) (actual time=0.012..0.012 rows=17.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 11kB
+                                Buffers: shared hit=1
+                                ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=216) (actual time=0.003..0.005 rows=17.00 loops=1)
+                                      Buffers: shared hit=1
+                    ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..0.63 rows=1 width=98) (actual time=0.004..0.004 rows=1.00 loops=17)
+                          Index Cond: (id = p."userId")
+                          Index Searches: 17
+                          Buffers: shared hit=51
+Planning:
+  Buffers: shared hit=25
+Planning Time: 0.248 ms
+Execution Time: 0.178 ms
+
+=== R42 run 2 ===
+Limit  (cost=19.29..19.32 rows=12 width=340) (actual time=0.143..0.146 rows=17.00 loops=1)
+  Buffers: shared hit=58
+  ->  Sort  (cost=19.29..19.32 rows=12 width=340) (actual time=0.143..0.144 rows=17.00 loops=1)
+        Sort Key: o."createdAt" DESC, o.id
+        Sort Method: quicksort  Memory: 33kB
+        Buffers: shared hit=58
+        ->  WindowAgg  (cost=17.61..19.07 rows=12 width=340) (actual time=0.126..0.132 rows=17.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 21kB
+              Buffers: shared hit=58
+              ->  Nested Loop  (cost=1.54..18.92 rows=12 width=332) (actual time=0.020..0.118 rows=17.00 loops=1)
+                    Buffers: shared hit=58
+                    ->  Hash Join  (cost=1.27..11.35 rows=12 width=271) (actual time=0.014..0.051 rows=17.00 loops=1)
+                          Hash Cond: (p.id = o."portfolioId")
+                          Buffers: shared hit=7
+                          ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=92) (actual time=0.003..0.022 rows=211.00 loops=1)
+                                Buffers: shared hit=6
+                          ->  Hash  (cost=1.12..1.12 rows=12 width=216) (actual time=0.010..0.010 rows=17.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 11kB
+                                Buffers: shared hit=1
+                                ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=216) (actual time=0.002..0.005 rows=17.00 loops=1)
+                                      Buffers: shared hit=1
+                    ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..0.63 rows=1 width=98) (actual time=0.004..0.004 rows=1.00 loops=17)
+                          Index Cond: (id = p."userId")
+                          Index Searches: 17
+                          Buffers: shared hit=51
+Planning:
+  Buffers: shared hit=19
+Planning Time: 0.216 ms
+Execution Time: 0.164 ms
+
+=== R42 run 3 ===
+Limit  (cost=19.29..19.32 rows=12 width=340) (actual time=0.134..0.136 rows=17.00 loops=1)
+  Buffers: shared hit=58
+  ->  Sort  (cost=19.29..19.32 rows=12 width=340) (actual time=0.134..0.135 rows=17.00 loops=1)
+        Sort Key: o."createdAt" DESC, o.id
+        Sort Method: quicksort  Memory: 33kB
+        Buffers: shared hit=58
+        ->  WindowAgg  (cost=17.61..19.07 rows=12 width=340) (actual time=0.122..0.126 rows=17.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 21kB
+              Buffers: shared hit=58
+              ->  Nested Loop  (cost=1.54..18.92 rows=12 width=332) (actual time=0.019..0.114 rows=17.00 loops=1)
+                    Buffers: shared hit=58
+                    ->  Hash Join  (cost=1.27..11.35 rows=12 width=271) (actual time=0.014..0.049 rows=17.00 loops=1)
+                          Hash Cond: (p.id = o."portfolioId")
+                          Buffers: shared hit=7
+                          ->  Seq Scan on "Portfolio" p  (cost=0.00..8.11 rows=211 width=92) (actual time=0.003..0.020 rows=211.00 loops=1)
+                                Buffers: shared hit=6
+                          ->  Hash  (cost=1.12..1.12 rows=12 width=216) (actual time=0.010..0.010 rows=17.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 11kB
+                                Buffers: shared hit=1
+                                ->  Seq Scan on "Order" o  (cost=0.00..1.12 rows=12 width=216) (actual time=0.002..0.005 rows=17.00 loops=1)
+                                      Buffers: shared hit=1
+                    ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..0.63 rows=1 width=98) (actual time=0.004..0.004 rows=1.00 loops=17)
+                          Index Cond: (id = p."userId")
+                          Index Searches: 17
+                          Buffers: shared hit=51
+Planning:
+  Buffers: shared hit=19
+Planning Time: 0.210 ms
+Execution Time: 0.153 ms

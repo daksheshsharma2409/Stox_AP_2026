@@ -1,0 +1,64 @@
+=== R32 run 1 ===
+GroupAggregate  (cost=10.05..10.07 rows=1 width=8) (actual time=0.026..0.026 rows=1.00 loops=1)
+  Group Key: sv.sentiment
+  Buffers: shared hit=9
+  ->  Sort  (cost=10.05..10.05 rows=1 width=4) (actual time=0.023..0.023 rows=1.00 loops=1)
+        Sort Key: sv.sentiment
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=9
+        ->  Nested Loop  (cost=0.27..10.04 rows=1 width=4) (actual time=0.014..0.015 rows=1.00 loops=1)
+              Buffers: shared hit=4
+              ->  Seq Scan on "SentimentVote" sv  (cost=0.00..1.70 rows=1 width=36) (actual time=0.007..0.007 rows=1.00 loops=1)
+                    Filter: (symbol = 'AAPL'::text)
+                    Buffers: shared hit=1
+              ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=37) (actual time=0.006..0.006 rows=1.00 loops=1)
+                    Index Cond: (id = sv."userId")
+                    Filter: (NOT "isSuspended")
+                    Index Searches: 1
+                    Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=65
+Planning Time: 0.342 ms
+Execution Time: 0.038 ms
+
+=== R32 run 2 ===
+GroupAggregate  (cost=10.05..10.07 rows=1 width=8) (actual time=0.010..0.011 rows=1.00 loops=1)
+  Group Key: sv.sentiment
+  Buffers: shared hit=4
+  ->  Sort  (cost=10.05..10.05 rows=1 width=4) (actual time=0.009..0.009 rows=1.00 loops=1)
+        Sort Key: sv.sentiment
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Nested Loop  (cost=0.27..10.04 rows=1 width=4) (actual time=0.008..0.009 rows=1.00 loops=1)
+              Buffers: shared hit=4
+              ->  Seq Scan on "SentimentVote" sv  (cost=0.00..1.70 rows=1 width=36) (actual time=0.002..0.003 rows=1.00 loops=1)
+                    Filter: (symbol = 'AAPL'::text)
+                    Buffers: shared hit=1
+              ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=37) (actual time=0.005..0.005 rows=1.00 loops=1)
+                    Index Cond: (id = sv."userId")
+                    Filter: (NOT "isSuspended")
+                    Index Searches: 1
+                    Buffers: shared hit=3
+Planning Time: 0.050 ms
+Execution Time: 0.018 ms
+
+=== R32 run 3 ===
+GroupAggregate  (cost=10.05..10.07 rows=1 width=8) (actual time=0.009..0.009 rows=1.00 loops=1)
+  Group Key: sv.sentiment
+  Buffers: shared hit=4
+  ->  Sort  (cost=10.05..10.05 rows=1 width=4) (actual time=0.008..0.008 rows=1.00 loops=1)
+        Sort Key: sv.sentiment
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Nested Loop  (cost=0.27..10.04 rows=1 width=4) (actual time=0.007..0.008 rows=1.00 loops=1)
+              Buffers: shared hit=4
+              ->  Seq Scan on "SentimentVote" sv  (cost=0.00..1.70 rows=1 width=36) (actual time=0.002..0.002 rows=1.00 loops=1)
+                    Filter: (symbol = 'AAPL'::text)
+                    Buffers: shared hit=1
+              ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=37) (actual time=0.005..0.005 rows=1.00 loops=1)
+                    Index Cond: (id = sv."userId")
+                    Filter: (NOT "isSuspended")
+                    Index Searches: 1
+                    Buffers: shared hit=3
+Planning Time: 0.042 ms
+Execution Time: 0.015 ms

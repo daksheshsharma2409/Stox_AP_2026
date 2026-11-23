@@ -1,0 +1,95 @@
+=== R46 run 1 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..12.34 rows=1 width=173) (actual time=0.021..0.022 rows=1.00 loops=1)
+  Index Cond: (id = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text)
+  Index Searches: 1
+  Buffers: shared hit=7
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.005..0.006 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.003..0.003 rows=1.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.001 rows=0.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 4
+    ->  Seq Scan on "Follow" f_2  (cost=0.00..1.00 rows=1 width=0) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Filter: (("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("followingId" = u.id))
+          Buffers: shared hit=1
+Planning Time: 0.095 ms
+Execution Time: 0.039 ms
+
+=== R46 run 2 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..12.34 rows=1 width=173) (actual time=0.014..0.015 rows=1.00 loops=1)
+  Index Cond: (id = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text)
+  Index Searches: 1
+  Buffers: shared hit=7
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.001..0.001 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.001 rows=0.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 4
+    ->  Seq Scan on "Follow" f_2  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Filter: (("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("followingId" = u.id))
+          Buffers: shared hit=1
+Planning Time: 0.073 ms
+Execution Time: 0.026 ms
+
+=== R46 run 3 ===
+Index Scan using "User_pkey" on "User" u  (cost=0.27..12.34 rows=1 width=173) (actual time=0.014..0.015 rows=1.00 loops=1)
+  Index Cond: (id = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text)
+  Index Searches: 1
+  Buffers: shared hit=7
+  SubPlan 1
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.003..0.003 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+                Filter: ("followingId" = u.id)
+                Buffers: shared hit=1
+  SubPlan 2
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.001..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Follow" f_1  (cost=0.00..1.00 rows=1 width=0) (actual time=0.001..0.001 rows=0.00 loops=1)
+                Filter: ("followerId" = u.id)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 3
+    ->  Aggregate  (cost=1.00..1.01 rows=1 width=8) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Buffers: shared hit=1
+          ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ((NOT "isHidden") AND ("authorId" = u.id))
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+  SubPlan 4
+    ->  Seq Scan on "Follow" f_2  (cost=0.00..1.00 rows=1 width=0) (actual time=0.002..0.002 rows=1.00 loops=1)
+          Filter: (("followerId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text) AND ("followingId" = u.id))
+          Buffers: shared hit=1
+Planning Time: 0.073 ms
+Execution Time: 0.025 ms

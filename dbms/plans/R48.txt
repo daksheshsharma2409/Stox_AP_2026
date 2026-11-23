@@ -1,0 +1,20 @@
+=== R48 run 1 ===
+Seq Scan on "LeagueMember"  (cost=0.00..1.65 rows=1 width=160) (actual time=0.002..0.003 rows=1.00 loops=1)
+  Filter: (("leagueId" = 'league-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+  Buffers: shared hit=1
+Planning Time: 0.023 ms
+Execution Time: 0.006 ms
+
+=== R48 run 2 ===
+Seq Scan on "LeagueMember"  (cost=0.00..1.65 rows=1 width=160) (actual time=0.002..0.002 rows=1.00 loops=1)
+  Filter: (("leagueId" = 'league-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+  Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.004 ms
+
+=== R48 run 3 ===
+Seq Scan on "LeagueMember"  (cost=0.00..1.65 rows=1 width=160) (actual time=0.002..0.002 rows=1.00 loops=1)
+  Filter: (("leagueId" = 'league-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+  Buffers: shared hit=1
+Planning Time: 0.016 ms
+Execution Time: 0.004 ms

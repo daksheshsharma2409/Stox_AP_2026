@@ -1,0 +1,23 @@
+=== W23 run 1 ===
+Insert on "Post"  (cost=0.00..0.03 rows=1 width=177) (actual time=0.085..0.086 rows=1.00 loops=1)
+  Buffers: shared hit=5
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.009 ms
+Trigger for constraint Post_authorId_fkey: time=0.057 calls=1
+Execution Time: 0.149 ms
+
+=== W23 run 2 ===
+Insert on "Post"  (cost=0.00..0.03 rows=1 width=177) (actual time=0.012..0.012 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.008 ms
+Trigger for constraint Post_authorId_fkey: time=0.028 calls=1
+Execution Time: 0.046 ms
+
+=== W23 run 3 ===
+Insert on "Post"  (cost=0.00..0.03 rows=1 width=177) (actual time=0.010..0.010 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.006 ms
+Trigger for constraint Post_authorId_fkey: time=0.024 calls=1
+Execution Time: 0.038 ms

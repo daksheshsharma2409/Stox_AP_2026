@@ -1,0 +1,29 @@
+=== W4 run 1 ===
+Update on "RefreshToken"  (cost=0.00..6.79 rows=0 width=0) (actual time=0.047..0.047 rows=0.00 loops=1)
+  Buffers: shared hit=19
+  ->  Seq Scan on "RefreshToken"  (cost=0.00..6.79 rows=1 width=14) (actual time=0.004..0.016 rows=1.00 loops=1)
+        Filter: (("revokedAt" IS NULL) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 147
+        Buffers: shared hit=5
+Planning Time: 0.018 ms
+Execution Time: 0.125 ms
+
+=== W4 run 2 ===
+Update on "RefreshToken"  (cost=0.00..6.79 rows=0 width=0) (actual time=0.040..0.040 rows=0.00 loops=1)
+  Buffers: shared hit=19
+  ->  Seq Scan on "RefreshToken"  (cost=0.00..6.79 rows=1 width=14) (actual time=0.005..0.015 rows=1.00 loops=1)
+        Filter: (("revokedAt" IS NULL) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 147
+        Buffers: shared hit=5
+Planning Time: 0.014 ms
+Execution Time: 0.043 ms
+
+=== W4 run 3 ===
+Update on "RefreshToken"  (cost=0.00..6.79 rows=0 width=0) (actual time=0.034..0.034 rows=0.00 loops=1)
+  Buffers: shared hit=19
+  ->  Seq Scan on "RefreshToken"  (cost=0.00..6.79 rows=1 width=14) (actual time=0.004..0.014 rows=1.00 loops=1)
+        Filter: (("revokedAt" IS NULL) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Rows Removed by Filter: 147
+        Buffers: shared hit=5
+Planning Time: 0.012 ms
+Execution Time: 0.037 ms

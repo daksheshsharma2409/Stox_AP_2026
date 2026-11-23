@@ -1,0 +1,29 @@
+=== R60 run 1 ===
+Aggregate  (cost=1.16..1.17 rows=1 width=68) (actual time=0.009..0.010 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=8) (actual time=0.008..0.008 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.066 ms
+Execution Time: 0.021 ms
+
+=== R60 run 2 ===
+Aggregate  (cost=1.16..1.17 rows=1 width=68) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.028 ms
+Execution Time: 0.012 ms
+
+=== R60 run 3 ===
+Aggregate  (cost=1.16..1.17 rows=1 width=68) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.15 rows=1 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning Time: 0.031 ms
+Execution Time: 0.013 ms

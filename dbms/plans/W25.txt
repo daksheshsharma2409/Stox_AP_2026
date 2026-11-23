@@ -1,0 +1,26 @@
+=== W25 run 1 ===
+Delete on "PostLike"  (cost=0.00..1.92 rows=0 width=0) (actual time=0.005..0.005 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "PostLike"  (cost=0.00..1.92 rows=1 width=6) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: (("postId" = 'post-fixture-1'::text) AND ("userId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.016 ms
+
+=== W25 run 2 ===
+Delete on "PostLike"  (cost=0.00..1.92 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "PostLike"  (cost=0.00..1.92 rows=1 width=6) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: (("postId" = 'post-fixture-1'::text) AND ("userId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+        Buffers: shared hit=1
+Planning Time: 0.012 ms
+Execution Time: 0.006 ms
+
+=== W25 run 3 ===
+Delete on "PostLike"  (cost=0.00..1.92 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Seq Scan on "PostLike"  (cost=0.00..1.92 rows=1 width=6) (actual time=0.002..0.002 rows=1.00 loops=1)
+        Filter: (("postId" = 'post-fixture-1'::text) AND ("userId" = '3ff78e52-740e-4aad-a0e0-55f083eeae7c'::text))
+        Buffers: shared hit=1
+Planning Time: 0.012 ms
+Execution Time: 0.006 ms

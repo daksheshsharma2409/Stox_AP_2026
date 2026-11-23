@@ -1,0 +1,23 @@
+=== R35 run 1 ===
+Index Scan using "User_googleId_key" on "User"  (cost=0.15..8.17 rows=1 width=223) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Index Cond: ("googleId" = 'google-oauth2|123456789'::text)
+  Index Searches: 1
+  Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.008 ms
+
+=== R35 run 2 ===
+Index Scan using "User_googleId_key" on "User"  (cost=0.15..8.17 rows=1 width=223) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Index Cond: ("googleId" = 'google-oauth2|123456789'::text)
+  Index Searches: 1
+  Buffers: shared hit=1
+Planning Time: 0.013 ms
+Execution Time: 0.004 ms
+
+=== R35 run 3 ===
+Index Scan using "User_googleId_key" on "User"  (cost=0.15..8.17 rows=1 width=223) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Index Cond: ("googleId" = 'google-oauth2|123456789'::text)
+  Index Searches: 1
+  Buffers: shared hit=1
+Planning Time: 0.012 ms
+Execution Time: 0.004 ms

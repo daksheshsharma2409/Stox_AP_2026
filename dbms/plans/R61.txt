@@ -1,0 +1,41 @@
+=== R61 run 1 ===
+HashAggregate  (cost=1.20..1.21 rows=1 width=69) (actual time=0.009..0.009 rows=0.00 loops=1)
+  Group Key: "portfolioId"
+  Batches: 1  Memory Usage: 32kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.20 rows=1 width=42) (actual time=0.008..0.008 rows=0.00 loops=1)
+        Filter: (("portfolioId" = ANY ('{2d483e50-3acb-42d7-8c54-fb9ced6b0841}'::text[])) AND ("executedAt" >= '2026-01-01 00:00:00'::timestamp without time zone) AND ("executedAt" < '2026-12-31 00:00:00'::timestamp without time zone))
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=12
+Planning Time: 0.099 ms
+Execution Time: 0.020 ms
+
+=== R61 run 2 ===
+HashAggregate  (cost=1.20..1.21 rows=1 width=69) (actual time=0.007..0.007 rows=0.00 loops=1)
+  Group Key: "portfolioId"
+  Batches: 1  Memory Usage: 32kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.20 rows=1 width=42) (actual time=0.006..0.006 rows=0.00 loops=1)
+        Filter: (("portfolioId" = ANY ('{2d483e50-3acb-42d7-8c54-fb9ced6b0841}'::text[])) AND ("executedAt" >= '2026-01-01 00:00:00'::timestamp without time zone) AND ("executedAt" < '2026-12-31 00:00:00'::timestamp without time zone))
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=6
+Planning Time: 0.063 ms
+Execution Time: 0.023 ms
+
+=== R61 run 3 ===
+HashAggregate  (cost=1.20..1.21 rows=1 width=69) (actual time=0.006..0.006 rows=0.00 loops=1)
+  Group Key: "portfolioId"
+  Batches: 1  Memory Usage: 32kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Trade"  (cost=0.00..1.20 rows=1 width=42) (actual time=0.005..0.005 rows=0.00 loops=1)
+        Filter: (("portfolioId" = ANY ('{2d483e50-3acb-42d7-8c54-fb9ced6b0841}'::text[])) AND ("executedAt" >= '2026-01-01 00:00:00'::timestamp without time zone) AND ("executedAt" < '2026-12-31 00:00:00'::timestamp without time zone))
+        Rows Removed by Filter: 16
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=6
+Planning Time: 0.044 ms
+Execution Time: 0.012 ms

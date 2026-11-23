@@ -1,0 +1,188 @@
+=== W52 run 1 ===
+Result  (cost=9.72..9.74 rows=1 width=140) (actual time=0.044..0.046 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  CTE filtered
+    ->  Hash Join  (cost=8.30..9.45 rows=1 width=66) (actual time=0.026..0.026 rows=0.00 loops=1)
+          Hash Cond: (t."portfolioId" = p.id)
+          Buffers: shared hit=4
+          ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=103) (actual time=0.005..0.006 rows=16.00 loops=1)
+                Buffers: shared hit=1
+          ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.012..0.013 rows=1.00 loops=1)
+                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                Buffers: shared hit=3
+                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.009..0.009 rows=1.00 loops=1)
+                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                      Index Searches: 1
+                      Buffers: shared hit=3
+  InitPlan 2
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.028..0.028 rows=1.00 loops=1)
+          Buffers: shared hit=4
+          ->  CTE Scan on filtered  (cost=0.00..0.02 rows=1 width=0) (actual time=0.026..0.026 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+                Buffers: shared hit=4
+  InitPlan 3
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.001..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_1  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" > '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 4
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.000..0.000 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_2  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" < '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 5
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.001..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_3  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 6
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.001..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_4  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 7
+    ->  Subquery Scan on b  (cost=0.03..0.05 rows=1 width=32) (actual time=0.006..0.006 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.006..0.006 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.006..0.006 rows=0.00 loops=1)
+                      Sort Key: filtered_5."realizedPnl" DESC, filtered_5."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_5  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+  InitPlan 8
+    ->  Subquery Scan on w  (cost=0.03..0.05 rows=1 width=32) (actual time=0.004..0.005 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.004..0.004 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.004..0.004 rows=0.00 loops=1)
+                      Sort Key: filtered_6."realizedPnl", filtered_6."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_6  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.231 ms
+Execution Time: 0.099 ms
+
+=== W52 run 2 ===
+Result  (cost=9.72..9.74 rows=1 width=140) (actual time=0.027..0.029 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  CTE filtered
+    ->  Hash Join  (cost=8.30..9.45 rows=1 width=66) (actual time=0.018..0.018 rows=0.00 loops=1)
+          Hash Cond: (t."portfolioId" = p.id)
+          Buffers: shared hit=4
+          ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=103) (actual time=0.005..0.006 rows=16.00 loops=1)
+                Buffers: shared hit=1
+          ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.008..0.009 rows=1.00 loops=1)
+                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                Buffers: shared hit=3
+                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.006..0.007 rows=1.00 loops=1)
+                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                      Index Searches: 1
+                      Buffers: shared hit=3
+  InitPlan 2
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.019..0.020 rows=1.00 loops=1)
+          Buffers: shared hit=4
+          ->  CTE Scan on filtered  (cost=0.00..0.02 rows=1 width=0) (actual time=0.018..0.018 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+                Buffers: shared hit=4
+  InitPlan 3
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.001..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_1  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" > '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 4
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.000..0.000 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_2  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" < '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 5
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.001..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_3  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 6
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.000..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_4  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 7
+    ->  Subquery Scan on b  (cost=0.03..0.05 rows=1 width=32) (actual time=0.002..0.003 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.002..0.002 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.002..0.002 rows=0.00 loops=1)
+                      Sort Key: filtered_5."realizedPnl" DESC, filtered_5."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_5  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+  InitPlan 8
+    ->  Subquery Scan on w  (cost=0.03..0.05 rows=1 width=32) (actual time=0.001..0.001 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.001..0.001 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.001..0.001 rows=0.00 loops=1)
+                      Sort Key: filtered_6."realizedPnl", filtered_6."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_6  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.231 ms
+Execution Time: 0.069 ms
+
+=== W52 run 3 ===
+Result  (cost=9.72..9.74 rows=1 width=140) (actual time=0.022..0.024 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  CTE filtered
+    ->  Hash Join  (cost=8.30..9.45 rows=1 width=66) (actual time=0.014..0.015 rows=0.00 loops=1)
+          Hash Cond: (t."portfolioId" = p.id)
+          Buffers: shared hit=4
+          ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=103) (actual time=0.004..0.005 rows=16.00 loops=1)
+                Buffers: shared hit=1
+          ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.007..0.007 rows=1.00 loops=1)
+                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                Buffers: shared hit=3
+                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.005..0.006 rows=1.00 loops=1)
+                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                      Index Searches: 1
+                      Buffers: shared hit=3
+  InitPlan 2
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.016..0.016 rows=1.00 loops=1)
+          Buffers: shared hit=4
+          ->  CTE Scan on filtered  (cost=0.00..0.02 rows=1 width=0) (actual time=0.015..0.015 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+                Buffers: shared hit=4
+  InitPlan 3
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.000..0.000 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_1  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" > '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 4
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=8) (actual time=0.000..0.000 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_2  (cost=0.00..0.02 rows=1 width=0) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Filter: ("realizedPnl" < '0'::numeric)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 5
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.000..0.001 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_3  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 6
+    ->  Aggregate  (cost=0.02..0.03 rows=1 width=32) (actual time=0.000..0.000 rows=1.00 loops=1)
+          ->  CTE Scan on filtered filtered_4  (cost=0.00..0.02 rows=1 width=20) (actual time=0.000..0.000 rows=0.00 loops=1)
+                Storage: Memory  Maximum Storage: 17kB
+  InitPlan 7
+    ->  Subquery Scan on b  (cost=0.03..0.05 rows=1 width=32) (actual time=0.002..0.002 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.002..0.002 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.001..0.001 rows=0.00 loops=1)
+                      Sort Key: filtered_5."realizedPnl" DESC, filtered_5."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_5  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+  InitPlan 8
+    ->  Subquery Scan on w  (cost=0.03..0.05 rows=1 width=32) (actual time=0.001..0.001 rows=0.00 loops=1)
+          ->  Limit  (cost=0.03..0.04 rows=1 width=80) (actual time=0.001..0.001 rows=0.00 loops=1)
+                ->  Sort  (cost=0.03..0.04 rows=1 width=80) (actual time=0.001..0.001 rows=0.00 loops=1)
+                      Sort Key: filtered_6."realizedPnl", filtered_6."executedAt" DESC
+                      Sort Method: quicksort  Memory: 25kB
+                      ->  CTE Scan on filtered filtered_6  (cost=0.00..0.02 rows=1 width=80) (actual time=0.000..0.000 rows=0.00 loops=1)
+                            Filter: ("realizedPnl" IS NOT NULL)
+                            Storage: Memory  Maximum Storage: 17kB
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.168 ms
+Execution Time: 0.056 ms

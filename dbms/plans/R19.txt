@@ -1,0 +1,64 @@
+=== R19 run 1 ===
+Limit  (cost=2.82..2.82 rows=1 width=134) (actual time=0.013..0.014 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.82..2.82 rows=1 width=134) (actual time=0.013..0.014 rows=1.00 loops=1)
+        Sort Key: a."lastEvaluatedAt" NULLS FIRST
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.67..2.81 rows=1 width=134) (actual time=0.011..0.012 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=47) (actual time=0.003..0.003 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.66..1.66 rows=1 width=156) (actual time=0.005..0.005 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.66 rows=1 width=156) (actual time=0.003..0.003 rows=1.00 loops=1)
+                          Filter: ((status = 'ACTIVE'::"AlertStatus") AND (("lastEvaluatedAt" IS NULL) OR ("lastEvaluatedAt" <= (now() - '00:01:00'::interval))))
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.088 ms
+Execution Time: 0.025 ms
+
+=== R19 run 2 ===
+Limit  (cost=2.82..2.82 rows=1 width=134) (actual time=0.009..0.010 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.82..2.82 rows=1 width=134) (actual time=0.009..0.009 rows=1.00 loops=1)
+        Sort Key: a."lastEvaluatedAt" NULLS FIRST
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.67..2.81 rows=1 width=134) (actual time=0.007..0.009 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=47) (actual time=0.002..0.003 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.66..1.66 rows=1 width=156) (actual time=0.003..0.003 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.66 rows=1 width=156) (actual time=0.002..0.002 rows=1.00 loops=1)
+                          Filter: ((status = 'ACTIVE'::"AlertStatus") AND (("lastEvaluatedAt" IS NULL) OR ("lastEvaluatedAt" <= (now() - '00:01:00'::interval))))
+                          Buffers: shared hit=1
+Planning Time: 0.059 ms
+Execution Time: 0.017 ms
+
+=== R19 run 3 ===
+Limit  (cost=2.82..2.82 rows=1 width=134) (actual time=0.008..0.009 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.82..2.82 rows=1 width=134) (actual time=0.008..0.009 rows=1.00 loops=1)
+        Sort Key: a."lastEvaluatedAt" NULLS FIRST
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.67..2.81 rows=1 width=134) (actual time=0.006..0.008 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=47) (actual time=0.002..0.002 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.66..1.66 rows=1 width=156) (actual time=0.003..0.003 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.66 rows=1 width=156) (actual time=0.002..0.002 rows=1.00 loops=1)
+                          Filter: ((status = 'ACTIVE'::"AlertStatus") AND (("lastEvaluatedAt" IS NULL) OR ("lastEvaluatedAt" <= (now() - '00:01:00'::interval))))
+                          Buffers: shared hit=1
+Planning Time: 0.052 ms
+Execution Time: 0.016 ms

@@ -1,0 +1,37 @@
+=== R8 run 1 ===
+Sort  (cost=9.42..9.42 rows=3 width=27) (actual time=0.048..0.048 rows=3.00 loops=1)
+  Sort Key: "snapshotDate"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=8
+  ->  Seq Scan on "PerformanceSnapshot"  (cost=0.00..9.39 rows=3 width=27) (actual time=0.009..0.037 rows=3.00 loops=1)
+        Filter: (("snapshotDate" >= '2026-01-01'::date) AND ("snapshotDate" <= '2026-12-31'::date) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text))
+        Rows Removed by Filter: 254
+        Buffers: shared hit=5
+Planning:
+  Buffers: shared hit=42
+Planning Time: 0.262 ms
+Execution Time: 0.054 ms
+
+=== R8 run 2 ===
+Sort  (cost=9.42..9.42 rows=3 width=27) (actual time=0.028..0.029 rows=3.00 loops=1)
+  Sort Key: "snapshotDate"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=5
+  ->  Seq Scan on "PerformanceSnapshot"  (cost=0.00..9.39 rows=3 width=27) (actual time=0.004..0.026 rows=3.00 loops=1)
+        Filter: (("snapshotDate" >= '2026-01-01'::date) AND ("snapshotDate" <= '2026-12-31'::date) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text))
+        Rows Removed by Filter: 254
+        Buffers: shared hit=5
+Planning Time: 0.034 ms
+Execution Time: 0.034 ms
+
+=== R8 run 3 ===
+Sort  (cost=9.42..9.42 rows=3 width=27) (actual time=0.027..0.027 rows=3.00 loops=1)
+  Sort Key: "snapshotDate"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=5
+  ->  Seq Scan on "PerformanceSnapshot"  (cost=0.00..9.39 rows=3 width=27) (actual time=0.005..0.026 rows=3.00 loops=1)
+        Filter: (("snapshotDate" >= '2026-01-01'::date) AND ("snapshotDate" <= '2026-12-31'::date) AND ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text))
+        Rows Removed by Filter: 254
+        Buffers: shared hit=5
+Planning Time: 0.026 ms
+Execution Time: 0.030 ms

@@ -1,0 +1,35 @@
+=== W7 run 1 ===
+Insert on "Holding"  (cost=0.00..0.03 rows=0 width=0) (actual time=0.105..0.105 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Holding_portfolioId_symbol_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.001..0.002 rows=1.00 loops=1)
+Planning Time: 0.017 ms
+Trigger for constraint Holding_portfolioId_fkey: time=0.065 calls=1
+Execution Time: 0.188 ms
+
+=== W7 run 2 ===
+Insert on "Holding"  (cost=0.00..0.03 rows=0 width=0) (actual time=0.025..0.025 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Holding_portfolioId_symbol_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.018 ms
+Trigger for constraint Holding_portfolioId_fkey: time=0.036 calls=1
+Execution Time: 0.070 ms
+
+=== W7 run 3 ===
+Insert on "Holding"  (cost=0.00..0.03 rows=0 width=0) (actual time=0.016..0.016 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Holding_portfolioId_symbol_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.03 rows=1 width=177) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.013 ms
+Trigger for constraint Holding_portfolioId_fkey: time=0.030 calls=1
+Execution Time: 0.053 ms

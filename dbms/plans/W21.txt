@@ -1,0 +1,83 @@
+=== W21 run 1 ===
+Update on "Notification"  (cost=7.83..15.94 rows=1 width=83) (actual time=0.008..0.008 rows=0.00 loops=1)
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=7.83..15.94 rows=1 width=83) (actual time=0.007..0.008 rows=0.00 loops=1)
+        Buffers: shared hit=7
+        ->  HashAggregate  (cost=7.56..7.57 rows=1 width=98) (actual time=0.007..0.008 rows=0.00 loops=1)
+              Group Key: "ANY_subquery".id
+              Batches: 1  Memory Usage: 32kB
+              Buffers: shared hit=7
+              ->  Subquery Scan on "ANY_subquery"  (cost=0.27..7.56 rows=1 width=98) (actual time=0.006..0.007 rows=0.00 loops=1)
+                    Buffers: shared hit=7
+                    ->  Limit  (cost=0.27..7.55 rows=1 width=51) (actual time=0.006..0.007 rows=0.00 loops=1)
+                          Buffers: shared hit=7
+                          ->  LockRows  (cost=0.27..7.55 rows=1 width=51) (actual time=0.006..0.006 rows=0.00 loops=1)
+                                Buffers: shared hit=7
+                                ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification" "Notification_1"  (cost=0.27..7.54 rows=1 width=51) (actual time=0.006..0.006 rows=0.00 loops=1)
+                                      Index Cond: ("deliveryStatus" = 'PENDING'::"NotificationDeliveryStatus")
+                                      Filter: (("deliveryAttempts" < 3) AND (("deliveryStartedAt" IS NULL) OR ("deliveryStartedAt" <= (now() - '00:05:00'::interval))))
+                                      Index Searches: 1
+                                      Buffers: shared hit=7
+        ->  Index Scan using "Notification_pkey" on "Notification"  (cost=0.27..8.29 rows=1 width=47) (never executed)
+              Index Cond: (id = "ANY_subquery".id)
+              Index Searches: 0
+Planning:
+  Buffers: shared hit=25
+Planning Time: 0.214 ms
+Execution Time: 0.035 ms
+
+=== W21 run 2 ===
+Update on "Notification"  (cost=7.83..15.94 rows=1 width=83) (actual time=0.003..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Nested Loop  (cost=7.83..15.94 rows=1 width=83) (actual time=0.003..0.004 rows=0.00 loops=1)
+        Buffers: shared hit=2
+        ->  HashAggregate  (cost=7.56..7.57 rows=1 width=98) (actual time=0.003..0.003 rows=0.00 loops=1)
+              Group Key: "ANY_subquery".id
+              Batches: 1  Memory Usage: 32kB
+              Buffers: shared hit=2
+              ->  Subquery Scan on "ANY_subquery"  (cost=0.27..7.56 rows=1 width=98) (actual time=0.003..0.003 rows=0.00 loops=1)
+                    Buffers: shared hit=2
+                    ->  Limit  (cost=0.27..7.55 rows=1 width=51) (actual time=0.003..0.003 rows=0.00 loops=1)
+                          Buffers: shared hit=2
+                          ->  LockRows  (cost=0.27..7.55 rows=1 width=51) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                Buffers: shared hit=2
+                                ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification" "Notification_1"  (cost=0.27..7.54 rows=1 width=51) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                      Index Cond: ("deliveryStatus" = 'PENDING'::"NotificationDeliveryStatus")
+                                      Filter: (("deliveryAttempts" < 3) AND (("deliveryStartedAt" IS NULL) OR ("deliveryStartedAt" <= (now() - '00:05:00'::interval))))
+                                      Index Searches: 1
+                                      Buffers: shared hit=2
+        ->  Index Scan using "Notification_pkey" on "Notification"  (cost=0.27..8.29 rows=1 width=47) (never executed)
+              Index Cond: (id = "ANY_subquery".id)
+              Index Searches: 0
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.114 ms
+Execution Time: 0.023 ms
+
+=== W21 run 3 ===
+Update on "Notification"  (cost=7.83..15.94 rows=1 width=83) (actual time=0.003..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Nested Loop  (cost=7.83..15.94 rows=1 width=83) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Buffers: shared hit=2
+        ->  HashAggregate  (cost=7.56..7.57 rows=1 width=98) (actual time=0.003..0.003 rows=0.00 loops=1)
+              Group Key: "ANY_subquery".id
+              Batches: 1  Memory Usage: 32kB
+              Buffers: shared hit=2
+              ->  Subquery Scan on "ANY_subquery"  (cost=0.27..7.56 rows=1 width=98) (actual time=0.002..0.002 rows=0.00 loops=1)
+                    Buffers: shared hit=2
+                    ->  Limit  (cost=0.27..7.55 rows=1 width=51) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Buffers: shared hit=2
+                          ->  LockRows  (cost=0.27..7.55 rows=1 width=51) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                Buffers: shared hit=2
+                                ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification" "Notification_1"  (cost=0.27..7.54 rows=1 width=51) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                      Index Cond: ("deliveryStatus" = 'PENDING'::"NotificationDeliveryStatus")
+                                      Filter: (("deliveryAttempts" < 3) AND (("deliveryStartedAt" IS NULL) OR ("deliveryStartedAt" <= (now() - '00:05:00'::interval))))
+                                      Index Searches: 1
+                                      Buffers: shared hit=2
+        ->  Index Scan using "Notification_pkey" on "Notification"  (cost=0.27..8.29 rows=1 width=47) (never executed)
+              Index Cond: (id = "ANY_subquery".id)
+              Index Searches: 0
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.151 ms
+Execution Time: 0.022 ms

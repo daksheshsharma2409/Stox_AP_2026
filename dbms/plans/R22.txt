@@ -1,0 +1,127 @@
+=== R22 run 1 ===
+Limit  (cost=14.80..53.40 rows=20 width=301) (actual time=0.056..0.057 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Result  (cost=14.80..132.53 rows=61 width=301) (actual time=0.056..0.056 rows=1.00 loops=1)
+        Buffers: shared hit=6
+        ->  Sort  (cost=14.80..14.96 rows=61 width=300) (actual time=0.050..0.051 rows=1.00 loops=1)
+              Sort Key: p."createdAt" DESC
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=5
+              ->  WindowAgg  (cost=13.01..13.18 rows=61 width=300) (actual time=0.043..0.043 rows=1.00 loops=1)
+                    Window: w1 AS ()
+                    Storage: Memory  Maximum Storage: 17kB
+                    Buffers: shared hit=5
+                    ->  HashAggregate  (cost=11.66..12.27 rows=61 width=296) (actual time=0.038..0.039 rows=1.00 loops=1)
+                          Group Key: p.id, u.id
+                          Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=5
+                          ->  Hash Right Join  (cost=9.35..11.20 rows=61 width=320) (actual time=0.030..0.034 rows=1.00 loops=1)
+                                Hash Cond: (pl."postId" = p.id)
+                                Buffers: shared hit=5
+                                ->  Seq Scan on "PostLike" pl  (cost=0.00..1.61 rows=61 width=64) (actual time=0.006..0.006 rows=1.00 loops=1)
+                                      Buffers: shared hit=1
+                                ->  Hash  (cost=9.34..9.34 rows=1 width=288) (actual time=0.019..0.019 rows=1.00 loops=1)
+                                      Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                      Buffers: shared hit=4
+                                      ->  Nested Loop  (cost=0.27..9.34 rows=1 width=288) (actual time=0.015..0.016 rows=1.00 loops=1)
+                                            Buffers: shared hit=4
+                                            ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=168) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                                  Filter: (NOT "isHidden")
+                                                  Buffers: shared hit=1
+                                            ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.009..0.009 rows=1.00 loops=1)
+                                                  Index Cond: (id = p."authorId")
+                                                  Index Searches: 1
+                                                  Buffers: shared hit=3
+        SubPlan 2
+          ->  Seq Scan on "PostLike" mine  (cost=0.00..1.76 rows=1 width=32) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=117
+Planning Time: 0.716 ms
+Execution Time: 0.099 ms
+
+=== R22 run 2 ===
+Limit  (cost=14.80..53.40 rows=20 width=301) (actual time=0.031..0.032 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Result  (cost=14.80..132.53 rows=61 width=301) (actual time=0.031..0.032 rows=1.00 loops=1)
+        Buffers: shared hit=6
+        ->  Sort  (cost=14.80..14.96 rows=61 width=300) (actual time=0.028..0.028 rows=1.00 loops=1)
+              Sort Key: p."createdAt" DESC
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=5
+              ->  WindowAgg  (cost=13.01..13.18 rows=61 width=300) (actual time=0.026..0.027 rows=1.00 loops=1)
+                    Window: w1 AS ()
+                    Storage: Memory  Maximum Storage: 17kB
+                    Buffers: shared hit=5
+                    ->  HashAggregate  (cost=11.66..12.27 rows=61 width=296) (actual time=0.023..0.024 rows=1.00 loops=1)
+                          Group Key: p.id, u.id
+                          Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=5
+                          ->  Hash Right Join  (cost=9.35..11.20 rows=61 width=320) (actual time=0.016..0.020 rows=1.00 loops=1)
+                                Hash Cond: (pl."postId" = p.id)
+                                Buffers: shared hit=5
+                                ->  Seq Scan on "PostLike" pl  (cost=0.00..1.61 rows=61 width=64) (actual time=0.002..0.003 rows=1.00 loops=1)
+                                      Buffers: shared hit=1
+                                ->  Hash  (cost=9.34..9.34 rows=1 width=288) (actual time=0.011..0.011 rows=1.00 loops=1)
+                                      Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                      Buffers: shared hit=4
+                                      ->  Nested Loop  (cost=0.27..9.34 rows=1 width=288) (actual time=0.010..0.010 rows=1.00 loops=1)
+                                            Buffers: shared hit=4
+                                            ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=168) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                                  Filter: (NOT "isHidden")
+                                                  Buffers: shared hit=1
+                                            ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                                  Index Cond: (id = p."authorId")
+                                                  Index Searches: 1
+                                                  Buffers: shared hit=3
+        SubPlan 2
+          ->  Seq Scan on "PostLike" mine  (cost=0.00..1.76 rows=1 width=32) (actual time=0.002..0.002 rows=0.00 loops=1)
+                Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+Planning Time: 0.163 ms
+Execution Time: 0.061 ms
+
+=== R22 run 3 ===
+Limit  (cost=14.80..53.40 rows=20 width=301) (actual time=0.025..0.026 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Result  (cost=14.80..132.53 rows=61 width=301) (actual time=0.025..0.026 rows=1.00 loops=1)
+        Buffers: shared hit=6
+        ->  Sort  (cost=14.80..14.96 rows=61 width=300) (actual time=0.022..0.023 rows=1.00 loops=1)
+              Sort Key: p."createdAt" DESC
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=5
+              ->  WindowAgg  (cost=13.01..13.18 rows=61 width=300) (actual time=0.021..0.022 rows=1.00 loops=1)
+                    Window: w1 AS ()
+                    Storage: Memory  Maximum Storage: 17kB
+                    Buffers: shared hit=5
+                    ->  HashAggregate  (cost=11.66..12.27 rows=61 width=296) (actual time=0.019..0.020 rows=1.00 loops=1)
+                          Group Key: p.id, u.id
+                          Batches: 1  Memory Usage: 32kB
+                          Buffers: shared hit=5
+                          ->  Hash Right Join  (cost=9.35..11.20 rows=61 width=320) (actual time=0.013..0.017 rows=1.00 loops=1)
+                                Hash Cond: (pl."postId" = p.id)
+                                Buffers: shared hit=5
+                                ->  Seq Scan on "PostLike" pl  (cost=0.00..1.61 rows=61 width=64) (actual time=0.001..0.001 rows=1.00 loops=1)
+                                      Buffers: shared hit=1
+                                ->  Hash  (cost=9.34..9.34 rows=1 width=288) (actual time=0.009..0.010 rows=1.00 loops=1)
+                                      Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                      Buffers: shared hit=4
+                                      ->  Nested Loop  (cost=0.27..9.34 rows=1 width=288) (actual time=0.008..0.009 rows=1.00 loops=1)
+                                            Buffers: shared hit=4
+                                            ->  Seq Scan on "Post" p  (cost=0.00..1.00 rows=1 width=168) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                                  Filter: (NOT "isHidden")
+                                                  Buffers: shared hit=1
+                                            ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                                  Index Cond: (id = p."authorId")
+                                                  Index Searches: 1
+                                                  Buffers: shared hit=3
+        SubPlan 2
+          ->  Seq Scan on "PostLike" mine  (cost=0.00..1.76 rows=1 width=32) (actual time=0.001..0.001 rows=0.00 loops=1)
+                Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                Rows Removed by Filter: 1
+                Buffers: shared hit=1
+Planning Time: 0.136 ms
+Execution Time: 0.054 ms

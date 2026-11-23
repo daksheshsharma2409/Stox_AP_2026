@@ -1,0 +1,23 @@
+=== W6 run 1 ===
+Insert on "Portfolio"  (cost=0.00..0.03 rows=1 width=206) (actual time=0.035..0.036 rows=1.00 loops=1)
+  Buffers: shared hit=9
+  ->  Result  (cost=0.00..0.03 rows=1 width=206) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.013 ms
+Trigger for constraint Portfolio_userId_fkey: time=0.040 calls=1
+Execution Time: 0.085 ms
+
+=== W6 run 2 ===
+Insert on "Portfolio"  (cost=0.00..0.03 rows=1 width=206) (actual time=0.025..0.026 rows=1.00 loops=1)
+  Buffers: shared hit=10
+  ->  Result  (cost=0.00..0.03 rows=1 width=206) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.009 ms
+Trigger for constraint Portfolio_userId_fkey: time=0.027 calls=1
+Execution Time: 0.058 ms
+
+=== W6 run 3 ===
+Insert on "Portfolio"  (cost=0.00..0.03 rows=1 width=206) (actual time=0.024..0.025 rows=1.00 loops=1)
+  Buffers: shared hit=10
+  ->  Result  (cost=0.00..0.03 rows=1 width=206) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.009 ms
+Trigger for constraint Portfolio_userId_fkey: time=0.027 calls=1
+Execution Time: 0.057 ms

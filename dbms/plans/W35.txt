@@ -1,0 +1,29 @@
+=== W35 run 1 ===
+Update on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.018..0.018 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Index Scan using "User_pkey" on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.006..0.007 rows=1.00 loops=1)
+        Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.017 ms
+Execution Time: 0.028 ms
+
+=== W35 run 2 ===
+Update on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.018..0.018 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Index Scan using "User_pkey" on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.011..0.011 rows=1.00 loops=1)
+        Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.014 ms
+Execution Time: 0.024 ms
+
+=== W35 run 3 ===
+Update on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.018..0.019 rows=1.00 loops=1)
+  Buffers: shared hit=6
+  ->  Index Scan using "User_pkey" on "User"  (cost=0.27..8.30 rows=1 width=78) (actual time=0.009..0.009 rows=1.00 loops=1)
+        Index Cond: (id = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+        Index Searches: 1
+        Buffers: shared hit=3
+Planning Time: 0.017 ms
+Execution Time: 0.026 ms

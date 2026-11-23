@@ -1,0 +1,32 @@
+=== W40 run 1 ===
+Update on "Notification"  (cost=0.27..7.53 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification"  (cost=0.27..7.53 rows=1 width=58) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Index Cond: ("deliveryStatus" = 'SENDING'::"NotificationDeliveryStatus")
+        Filter: (id = 'c017322b-f735-47eb-8c99-81de5896771f'::text)
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.020 ms
+Execution Time: 0.009 ms
+
+=== W40 run 2 ===
+Update on "Notification"  (cost=0.27..7.53 rows=0 width=0) (actual time=0.001..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification"  (cost=0.27..7.53 rows=1 width=58) (actual time=0.001..0.001 rows=0.00 loops=1)
+        Index Cond: ("deliveryStatus" = 'SENDING'::"NotificationDeliveryStatus")
+        Filter: (id = 'c017322b-f735-47eb-8c99-81de5896771f'::text)
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.017 ms
+Execution Time: 0.005 ms
+
+=== W40 run 3 ===
+Update on "Notification"  (cost=0.27..7.53 rows=0 width=0) (actual time=0.001..0.001 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Index Scan using "Notification_deliveryStatus_createdAt_idx" on "Notification"  (cost=0.27..7.53 rows=1 width=58) (actual time=0.001..0.001 rows=0.00 loops=1)
+        Index Cond: ("deliveryStatus" = 'SENDING'::"NotificationDeliveryStatus")
+        Filter: (id = 'c017322b-f735-47eb-8c99-81de5896771f'::text)
+        Index Searches: 1
+        Buffers: shared hit=2
+Planning Time: 0.015 ms
+Execution Time: 0.004 ms

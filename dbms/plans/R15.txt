@@ -1,0 +1,86 @@
+=== R15 run 1 ===
+Sort  (cost=9.52..9.53 rows=1 width=113) (actual time=0.018..0.019 rows=0.00 loops=1)
+  Sort Key: (COALESCE(sum(t."realizedPnl"), '0'::numeric)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  GroupAggregate  (cost=9.46..9.51 rows=1 width=113) (actual time=0.013..0.013 rows=0.00 loops=1)
+        Group Key: t.symbol
+        Buffers: shared hit=4
+        ->  Sort  (cost=9.46..9.47 rows=1 width=18) (actual time=0.012..0.013 rows=0.00 loops=1)
+              Sort Key: t.symbol
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=4
+              ->  Hash Join  (cost=8.30..9.45 rows=1 width=18) (actual time=0.011..0.011 rows=0.00 loops=1)
+                    Hash Cond: (t."portfolioId" = p.id)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=55) (actual time=0.003..0.003 rows=16.00 loops=1)
+                          Buffers: shared hit=1
+                    ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.005..0.006 rows=1.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Index Searches: 1
+                                Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.159 ms
+Execution Time: 0.039 ms
+
+=== R15 run 2 ===
+Sort  (cost=9.52..9.53 rows=1 width=113) (actual time=0.019..0.019 rows=0.00 loops=1)
+  Sort Key: (COALESCE(sum(t."realizedPnl"), '0'::numeric)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  GroupAggregate  (cost=9.46..9.51 rows=1 width=113) (actual time=0.018..0.018 rows=0.00 loops=1)
+        Group Key: t.symbol
+        Buffers: shared hit=4
+        ->  Sort  (cost=9.46..9.47 rows=1 width=18) (actual time=0.015..0.015 rows=0.00 loops=1)
+              Sort Key: t.symbol
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=4
+              ->  Hash Join  (cost=8.30..9.45 rows=1 width=18) (actual time=0.014..0.015 rows=0.00 loops=1)
+                    Hash Cond: (t."portfolioId" = p.id)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=55) (actual time=0.005..0.005 rows=16.00 loops=1)
+                          Buffers: shared hit=1
+                    ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.006..0.006 rows=1.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Index Searches: 1
+                                Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.136 ms
+Execution Time: 0.046 ms
+
+=== R15 run 3 ===
+Sort  (cost=9.52..9.53 rows=1 width=113) (actual time=0.014..0.014 rows=0.00 loops=1)
+  Sort Key: (COALESCE(sum(t."realizedPnl"), '0'::numeric)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  GroupAggregate  (cost=9.46..9.51 rows=1 width=113) (actual time=0.013..0.013 rows=0.00 loops=1)
+        Group Key: t.symbol
+        Buffers: shared hit=4
+        ->  Sort  (cost=9.46..9.47 rows=1 width=18) (actual time=0.013..0.013 rows=0.00 loops=1)
+              Sort Key: t.symbol
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=4
+              ->  Hash Join  (cost=8.30..9.45 rows=1 width=18) (actual time=0.012..0.012 rows=0.00 loops=1)
+                    Hash Cond: (t."portfolioId" = p.id)
+                    Buffers: shared hit=4
+                    ->  Seq Scan on "Trade" t  (cost=0.00..1.12 rows=12 width=55) (actual time=0.003..0.004 rows=16.00 loops=1)
+                          Buffers: shared hit=1
+                    ->  Hash  (cost=8.29..8.29 rows=1 width=37) (actual time=0.005..0.006 rows=1.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=37) (actual time=0.004..0.004 rows=1.00 loops=1)
+                                Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Index Searches: 1
+                                Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.122 ms
+Execution Time: 0.030 ms

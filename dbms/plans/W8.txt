@@ -1,0 +1,29 @@
+=== W8 run 1 ===
+Update on "Holding"  (cost=0.00..1.88 rows=0 width=0) (actual time=0.005..0.005 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.88 rows=1 width=74) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.033 ms
+Execution Time: 0.013 ms
+
+=== W8 run 2 ===
+Update on "Holding"  (cost=0.00..1.88 rows=0 width=0) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.88 rows=1 width=74) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.024 ms
+Execution Time: 0.008 ms
+
+=== W8 run 3 ===
+Update on "Holding"  (cost=0.00..1.88 rows=0 width=0) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.88 rows=1 width=74) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (symbol = 'AAPL'::text))
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.021 ms
+Execution Time: 0.007 ms

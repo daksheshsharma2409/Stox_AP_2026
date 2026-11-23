@@ -1,0 +1,101 @@
+=== R4 run 1 ===
+Sort  (cost=10.08..10.08 rows=1 width=151) (actual time=0.091..0.092 rows=1.00 loops=1)
+  Sort Key: p."isDefault" DESC, p."createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=15
+  ->  WindowAgg  (cost=10.03..10.07 rows=1 width=151) (actual time=0.069..0.070 rows=1.00 loops=1)
+        Window: w1 AS ()
+        Storage: Memory  Maximum Storage: 17kB
+        Buffers: shared hit=7
+        ->  GroupAggregate  (cost=10.03..10.05 rows=1 width=147) (actual time=0.059..0.060 rows=1.00 loops=1)
+              Group Key: p.id
+              Buffers: shared hit=7
+              ->  Sort  (cost=10.03..10.03 rows=1 width=148) (actual time=0.049..0.050 rows=1.00 loops=1)
+                    Sort Key: p.id
+                    Sort Method: quicksort  Memory: 25kB
+                    Buffers: shared hit=7
+                    ->  Hash Right Join  (cost=8.30..10.02 rows=1 width=148) (actual time=0.033..0.036 rows=1.00 loops=1)
+                          Hash Cond: (h."portfolioId" = p.id)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=78) (actual time=0.004..0.004 rows=3.00 loops=1)
+                                Buffers: shared hit=1
+                          ->  Hash  (cost=8.29..8.29 rows=1 width=107) (actual time=0.018..0.018 rows=1.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=3
+                                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=107) (actual time=0.009..0.009 rows=1.00 loops=1)
+                                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                      Filter: "isActive"
+                                      Index Searches: 1
+                                      Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=172
+Planning Time: 0.846 ms
+Execution Time: 0.261 ms
+
+=== R4 run 2 ===
+Sort  (cost=10.08..10.08 rows=1 width=151) (actual time=0.021..0.022 rows=1.00 loops=1)
+  Sort Key: p."isDefault" DESC, p."createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  WindowAgg  (cost=10.03..10.07 rows=1 width=151) (actual time=0.020..0.020 rows=1.00 loops=1)
+        Window: w1 AS ()
+        Storage: Memory  Maximum Storage: 17kB
+        Buffers: shared hit=4
+        ->  GroupAggregate  (cost=10.03..10.05 rows=1 width=147) (actual time=0.017..0.017 rows=1.00 loops=1)
+              Group Key: p.id
+              Buffers: shared hit=4
+              ->  Sort  (cost=10.03..10.03 rows=1 width=148) (actual time=0.015..0.015 rows=1.00 loops=1)
+                    Sort Key: p.id
+                    Sort Method: quicksort  Memory: 25kB
+                    Buffers: shared hit=4
+                    ->  Hash Right Join  (cost=8.30..10.02 rows=1 width=148) (actual time=0.013..0.014 rows=1.00 loops=1)
+                          Hash Cond: (h."portfolioId" = p.id)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=78) (actual time=0.002..0.002 rows=3.00 loops=1)
+                                Buffers: shared hit=1
+                          ->  Hash  (cost=8.29..8.29 rows=1 width=107) (actual time=0.006..0.006 rows=1.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=3
+                                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=107) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                      Filter: "isActive"
+                                      Index Searches: 1
+                                      Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.107 ms
+Execution Time: 0.039 ms
+
+=== R4 run 3 ===
+Sort  (cost=10.08..10.08 rows=1 width=151) (actual time=0.033..0.034 rows=1.00 loops=1)
+  Sort Key: p."isDefault" DESC, p."createdAt"
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  WindowAgg  (cost=10.03..10.07 rows=1 width=151) (actual time=0.031..0.032 rows=1.00 loops=1)
+        Window: w1 AS ()
+        Storage: Memory  Maximum Storage: 17kB
+        Buffers: shared hit=4
+        ->  GroupAggregate  (cost=10.03..10.05 rows=1 width=147) (actual time=0.028..0.028 rows=1.00 loops=1)
+              Group Key: p.id
+              Buffers: shared hit=4
+              ->  Sort  (cost=10.03..10.03 rows=1 width=148) (actual time=0.024..0.025 rows=1.00 loops=1)
+                    Sort Key: p.id
+                    Sort Method: quicksort  Memory: 25kB
+                    Buffers: shared hit=4
+                    ->  Hash Right Join  (cost=8.30..10.02 rows=1 width=148) (actual time=0.021..0.023 rows=1.00 loops=1)
+                          Hash Cond: (h."portfolioId" = p.id)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "Holding" h  (cost=0.00..1.57 rows=57 width=78) (actual time=0.003..0.004 rows=3.00 loops=1)
+                                Buffers: shared hit=1
+                          ->  Hash  (cost=8.29..8.29 rows=1 width=107) (actual time=0.009..0.009 rows=1.00 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                Buffers: shared hit=3
+                                ->  Index Scan using "Portfolio_userId_name_key" on "Portfolio" p  (cost=0.27..8.29 rows=1 width=107) (actual time=0.006..0.006 rows=1.00 loops=1)
+                                      Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                      Filter: "isActive"
+                                      Index Searches: 1
+                                      Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.143 ms
+Execution Time: 0.057 ms

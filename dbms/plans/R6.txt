@@ -1,0 +1,35 @@
+=== R6 run 1 ===
+Sort  (cost=1.72..1.73 rows=1 width=68) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Sort Key: symbol
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.71 rows=1 width=68) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.007 ms
+
+=== R6 run 2 ===
+Sort  (cost=1.72..1.73 rows=1 width=68) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Sort Key: symbol
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.71 rows=1 width=68) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.018 ms
+Execution Time: 0.006 ms
+
+=== R6 run 3 ===
+Sort  (cost=1.72..1.73 rows=1 width=68) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Sort Key: symbol
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=1
+  ->  Seq Scan on "Holding"  (cost=0.00..1.71 rows=1 width=68) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Filter: ("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text)
+        Rows Removed by Filter: 3
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.005 ms

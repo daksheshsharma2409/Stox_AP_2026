@@ -1,0 +1,37 @@
+=== W10 run 1 ===
+Insert on "PerformanceSnapshot"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.400..0.401 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: PerformanceSnapshot_portfolioId_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=23 read=1 dirtied=1
+  ->  Result  (cost=0.00..0.02 rows=1 width=172) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=54
+Planning Time: 0.062 ms
+Trigger for constraint PerformanceSnapshot_portfolioId_fkey: time=0.059 calls=1
+Execution Time: 0.469 ms
+
+=== W10 run 2 ===
+Insert on "PerformanceSnapshot"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.198..0.198 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: PerformanceSnapshot_portfolioId_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=11 read=1 dirtied=1
+  ->  Result  (cost=0.00..0.02 rows=1 width=172) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.012 ms
+Trigger for constraint PerformanceSnapshot_portfolioId_fkey: time=0.028 calls=1
+Execution Time: 0.233 ms
+
+=== W10 run 3 ===
+Insert on "PerformanceSnapshot"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.026..0.026 rows=0.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: PerformanceSnapshot_portfolioId_snapshotDate_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=12
+  ->  Result  (cost=0.00..0.02 rows=1 width=172) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.010 ms
+Trigger for constraint PerformanceSnapshot_portfolioId_fkey: time=0.024 calls=1
+Execution Time: 0.055 ms

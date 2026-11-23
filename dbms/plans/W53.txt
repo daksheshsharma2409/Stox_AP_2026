@@ -1,0 +1,35 @@
+=== W53 run 1 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.072..0.073 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Notification_eventKey_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=11
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.003..0.003 rows=1.00 loops=1)
+Planning Time: 0.024 ms
+Trigger for constraint Notification_userId_fkey: time=0.085 calls=1
+Execution Time: 0.171 ms
+
+=== W53 run 2 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.075..0.076 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Notification_eventKey_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=11
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.003..0.003 rows=1.00 loops=1)
+Planning Time: 0.019 ms
+Trigger for constraint Notification_userId_fkey: time=0.044 calls=1
+Execution Time: 0.132 ms
+
+=== W53 run 3 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.039..0.040 rows=1.00 loops=1)
+  Conflict Resolution: UPDATE
+  Conflict Arbiter Indexes: Notification_eventKey_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=11
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.003..0.003 rows=1.00 loops=1)
+Planning Time: 0.021 ms
+Trigger for constraint Notification_userId_fkey: time=0.051 calls=1
+Execution Time: 0.102 ms

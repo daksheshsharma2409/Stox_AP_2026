@@ -1,0 +1,43 @@
+=== R20 run 1 ===
+Limit  (cost=8.30..8.30 rows=1 width=338) (actual time=0.013..0.013 rows=0.00 loops=1)
+  Buffers: shared hit=4
+  ->  Sort  (cost=8.30..8.30 rows=1 width=338) (actual time=0.013..0.013 rows=0.00 loops=1)
+        Sort Key: "createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=4
+        ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.29 rows=1 width=338) (actual time=0.012..0.012 rows=0.00 loops=1)
+              Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+              Index Searches: 1
+              Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=107
+Planning Time: 0.443 ms
+Execution Time: 0.026 ms
+
+=== R20 run 2 ===
+Limit  (cost=8.30..8.30 rows=1 width=338) (actual time=0.004..0.005 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=8.30..8.30 rows=1 width=338) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Sort Key: "createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.29 rows=1 width=338) (actual time=0.004..0.004 rows=0.00 loops=1)
+              Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+              Index Searches: 1
+              Buffers: shared hit=2
+Planning Time: 0.021 ms
+Execution Time: 0.009 ms
+
+=== R20 run 3 ===
+Limit  (cost=8.30..8.30 rows=1 width=338) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=8.30..8.30 rows=1 width=338) (actual time=0.004..0.004 rows=0.00 loops=1)
+        Sort Key: "createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Index Scan using "Notification_userId_isRead_idx" on "Notification"  (cost=0.27..8.29 rows=1 width=338) (actual time=0.004..0.004 rows=0.00 loops=1)
+              Index Cond: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+              Index Searches: 1
+              Buffers: shared hit=2
+Planning Time: 0.019 ms
+Execution Time: 0.008 ms

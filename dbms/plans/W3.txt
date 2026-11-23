@@ -1,0 +1,23 @@
+=== W3 run 1 ===
+Insert on "RefreshToken"  (cost=0.00..0.02 rows=1 width=184) (actual time=0.231..0.232 rows=1.00 loops=1)
+  Buffers: shared hit=48 dirtied=1
+  ->  Result  (cost=0.00..0.02 rows=1 width=184) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.015 ms
+Trigger for constraint RefreshToken_userId_fkey: time=0.109 calls=1
+Execution Time: 0.352 ms
+
+=== W3 run 2 ===
+Insert on "RefreshToken"  (cost=0.00..0.02 rows=1 width=184) (actual time=0.019..0.019 rows=1.00 loops=1)
+  Buffers: shared hit=7
+  ->  Result  (cost=0.00..0.02 rows=1 width=184) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.009 ms
+Trigger for constraint RefreshToken_userId_fkey: time=0.033 calls=1
+Execution Time: 0.059 ms
+
+=== W3 run 3 ===
+Insert on "RefreshToken"  (cost=0.00..0.02 rows=1 width=184) (actual time=0.322..0.322 rows=1.00 loops=1)
+  Buffers: shared hit=6 read=1 dirtied=1
+  ->  Result  (cost=0.00..0.02 rows=1 width=184) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Trigger for constraint RefreshToken_userId_fkey: time=0.047 calls=1
+Execution Time: 0.376 ms

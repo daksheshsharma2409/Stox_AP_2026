@@ -1,0 +1,14 @@
+=== R54 run 1 ===
+Result  (cost=0.00..0.01 rows=1 width=4) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning Time: 0.003 ms
+Execution Time: 0.002 ms
+
+=== R54 run 2 ===
+Result  (cost=0.00..0.01 rows=1 width=4) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning Time: 0.002 ms
+Execution Time: 0.001 ms
+
+=== R54 run 3 ===
+Result  (cost=0.00..0.01 rows=1 width=4) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning Time: 0.002 ms
+Execution Time: 0.001 ms

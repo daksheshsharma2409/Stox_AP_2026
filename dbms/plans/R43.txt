@@ -1,0 +1,44 @@
+=== R43 run 1 ===
+Hash Join  (cost=1.51..2.62 rows=1 width=251) (actual time=0.011..0.013 rows=1.00 loops=1)
+  Hash Cond: (s.id = a."symbolId")
+  Buffers: shared hit=2
+  ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.003..0.004 rows=9.00 loops=1)
+        Buffers: shared hit=1
+  ->  Hash  (cost=1.50..1.50 rows=1 width=218) (actual time=0.006..0.006 rows=1.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 9kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Alert" a  (cost=0.00..1.50 rows=1 width=218) (actual time=0.004..0.004 rows=1.00 loops=1)
+              Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+              Buffers: shared hit=1
+Planning Time: 0.068 ms
+Execution Time: 0.021 ms
+
+=== R43 run 2 ===
+Hash Join  (cost=1.51..2.62 rows=1 width=251) (actual time=0.007..0.008 rows=1.00 loops=1)
+  Hash Cond: (s.id = a."symbolId")
+  Buffers: shared hit=2
+  ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.002..0.002 rows=9.00 loops=1)
+        Buffers: shared hit=1
+  ->  Hash  (cost=1.50..1.50 rows=1 width=218) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 9kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Alert" a  (cost=0.00..1.50 rows=1 width=218) (actual time=0.002..0.002 rows=1.00 loops=1)
+              Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+              Buffers: shared hit=1
+Planning Time: 0.047 ms
+Execution Time: 0.016 ms
+
+=== R43 run 3 ===
+Hash Join  (cost=1.51..2.62 rows=1 width=251) (actual time=0.006..0.007 rows=1.00 loops=1)
+  Hash Cond: (s.id = a."symbolId")
+  Buffers: shared hit=2
+  ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.002..0.002 rows=9.00 loops=1)
+        Buffers: shared hit=1
+  ->  Hash  (cost=1.50..1.50 rows=1 width=218) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 9kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Alert" a  (cost=0.00..1.50 rows=1 width=218) (actual time=0.002..0.002 rows=1.00 loops=1)
+              Filter: ((id = 'alert-fixture-1'::text) AND ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+              Buffers: shared hit=1
+Planning Time: 0.045 ms
+Execution Time: 0.014 ms

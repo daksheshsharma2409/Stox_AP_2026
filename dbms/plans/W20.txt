@@ -1,0 +1,23 @@
+=== W20 run 1 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.303..0.304 rows=1.00 loops=1)
+  Buffers: shared hit=15 dirtied=2
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.003..0.004 rows=1.00 loops=1)
+Planning Time: 0.017 ms
+Trigger for constraint Notification_userId_fkey: time=0.131 calls=1
+Execution Time: 0.450 ms
+
+=== W20 run 2 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.040..0.040 rows=1.00 loops=1)
+  Buffers: shared hit=12 dirtied=1
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.003..0.003 rows=1.00 loops=1)
+Planning Time: 0.011 ms
+Trigger for constraint Notification_userId_fkey: time=0.045 calls=1
+Execution Time: 0.095 ms
+
+=== W20 run 3 ===
+Insert on "Notification"  (cost=0.00..0.02 rows=1 width=269) (actual time=0.288..0.288 rows=1.00 loops=1)
+  Buffers: shared hit=10 read=1 dirtied=2
+  ->  Result  (cost=0.00..0.02 rows=1 width=269) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Trigger for constraint Notification_userId_fkey: time=0.046 calls=1
+Execution Time: 0.343 ms

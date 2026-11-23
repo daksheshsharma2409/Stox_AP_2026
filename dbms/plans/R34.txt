@@ -1,0 +1,94 @@
+=== R34 run 1 ===
+Limit  (cost=19.33..19.33 rows=1 width=236) (actual time=0.034..0.035 rows=1.00 loops=1)
+  Buffers: shared hit=9
+  ->  Sort  (cost=19.33..19.33 rows=1 width=236) (actual time=0.034..0.034 rows=1.00 loops=1)
+        Sort Key: ct."createdAt" DESC, ct.id DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=9
+        ->  WindowAgg  (cost=0.55..19.32 rows=1 width=236) (actual time=0.031..0.032 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=9
+              ->  Nested Loop Left Join  (cost=0.55..19.30 rows=1 width=228) (actual time=0.026..0.027 rows=1.00 loops=1)
+                    Buffers: shared hit=9
+                    ->  Nested Loop  (cost=0.27..9.82 rows=1 width=257) (actual time=0.010..0.010 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=105) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                Filter: ("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.006..0.006 rows=1.00 loops=1)
+                                Index Cond: (id = ct."copiedId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+                    ->  Limit  (cost=0.28..9.46 rows=1 width=7) (actual time=0.016..0.016 rows=1.00 loops=1)
+                          Buffers: shared hit=5
+                          ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=7) (actual time=0.015..0.016 rows=1.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'ALL_TIME'::"LeaderboardPeriod") AND ("userId" = ct."copiedId"))
+                                Index Searches: 2
+                                Buffers: shared hit=5
+Planning:
+  Buffers: shared hit=36
+Planning Time: 0.445 ms
+Execution Time: 0.052 ms
+
+=== R34 run 2 ===
+Limit  (cost=19.33..19.33 rows=1 width=236) (actual time=0.020..0.020 rows=1.00 loops=1)
+  Buffers: shared hit=9
+  ->  Sort  (cost=19.33..19.33 rows=1 width=236) (actual time=0.019..0.020 rows=1.00 loops=1)
+        Sort Key: ct."createdAt" DESC, ct.id DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=9
+        ->  WindowAgg  (cost=0.55..19.32 rows=1 width=236) (actual time=0.018..0.019 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=9
+              ->  Nested Loop Left Join  (cost=0.55..19.30 rows=1 width=228) (actual time=0.016..0.017 rows=1.00 loops=1)
+                    Buffers: shared hit=9
+                    ->  Nested Loop  (cost=0.27..9.82 rows=1 width=257) (actual time=0.008..0.008 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=105) (actual time=0.002..0.002 rows=1.00 loops=1)
+                                Filter: ("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                Index Cond: (id = ct."copiedId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+                    ->  Limit  (cost=0.28..9.46 rows=1 width=7) (actual time=0.008..0.008 rows=1.00 loops=1)
+                          Buffers: shared hit=5
+                          ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=7) (actual time=0.007..0.008 rows=1.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'ALL_TIME'::"LeaderboardPeriod") AND ("userId" = ct."copiedId"))
+                                Index Searches: 2
+                                Buffers: shared hit=5
+Planning Time: 0.091 ms
+Execution Time: 0.034 ms
+
+=== R34 run 3 ===
+Limit  (cost=19.33..19.33 rows=1 width=236) (actual time=0.026..0.027 rows=1.00 loops=1)
+  Buffers: shared hit=9
+  ->  Sort  (cost=19.33..19.33 rows=1 width=236) (actual time=0.026..0.027 rows=1.00 loops=1)
+        Sort Key: ct."createdAt" DESC, ct.id DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=9
+        ->  WindowAgg  (cost=0.55..19.32 rows=1 width=236) (actual time=0.024..0.025 rows=1.00 loops=1)
+              Window: w1 AS ()
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=9
+              ->  Nested Loop Left Join  (cost=0.55..19.30 rows=1 width=228) (actual time=0.021..0.021 rows=1.00 loops=1)
+                    Buffers: shared hit=9
+                    ->  Nested Loop  (cost=0.27..9.82 rows=1 width=257) (actual time=0.009..0.010 rows=1.00 loops=1)
+                          Buffers: shared hit=4
+                          ->  Seq Scan on "CopyTrader" ct  (cost=0.00..1.49 rows=1 width=105) (actual time=0.003..0.003 rows=1.00 loops=1)
+                                Filter: ("copierId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                                Buffers: shared hit=1
+                          ->  Index Scan using "User_pkey" on "User" u  (cost=0.27..8.29 rows=1 width=152) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                Index Cond: (id = ct."copiedId")
+                                Index Searches: 1
+                                Buffers: shared hit=3
+                    ->  Limit  (cost=0.28..9.46 rows=1 width=7) (actual time=0.010..0.010 rows=1.00 loops=1)
+                          Buffers: shared hit=5
+                          ->  Index Scan Backward using "LeaderboardEntry_scope_period_snapshotDate_userId_key" on "LeaderboardEntry"  (cost=0.28..18.64 rows=2 width=7) (actual time=0.010..0.010 rows=1.00 loops=1)
+                                Index Cond: ((scope = 'GLOBAL'::"LeaderboardScope") AND (period = 'ALL_TIME'::"LeaderboardPeriod") AND ("userId" = ct."copiedId"))
+                                Index Searches: 2
+                                Buffers: shared hit=5
+Planning Time: 0.123 ms
+Execution Time: 0.045 ms

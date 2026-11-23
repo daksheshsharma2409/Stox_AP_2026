@@ -1,0 +1,23 @@
+=== R39 run 1 ===
+Seq Scan on "Order"  (cost=0.00..1.21 rows=1 width=14) (actual time=0.006..0.006 rows=0.00 loops=1)
+  Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (side = 'SELL'::"OrderSide") AND (status = 'PENDING'::"OrderStatus"))
+  Rows Removed by Filter: 17
+  Buffers: shared hit=1
+Planning Time: 0.040 ms
+Execution Time: 0.009 ms
+
+=== R39 run 2 ===
+Seq Scan on "Order"  (cost=0.00..1.21 rows=1 width=14) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (side = 'SELL'::"OrderSide") AND (status = 'PENDING'::"OrderStatus"))
+  Rows Removed by Filter: 17
+  Buffers: shared hit=1
+Planning Time: 0.023 ms
+Execution Time: 0.006 ms
+
+=== R39 run 3 ===
+Seq Scan on "Order"  (cost=0.00..1.21 rows=1 width=14) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Filter: (("portfolioId" = '2d483e50-3acb-42d7-8c54-fb9ced6b0841'::text) AND (side = 'SELL'::"OrderSide") AND (status = 'PENDING'::"OrderStatus"))
+  Rows Removed by Filter: 17
+  Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.005 ms

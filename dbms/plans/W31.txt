@@ -1,0 +1,38 @@
+=== W31 run 1 ===
+Insert on "UserAchievement"  (cost=0.00..0.02 rows=1 width=136) (actual time=0.113..0.113 rows=1.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: UserAchievement_userId_achievementId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=9
+  ->  Result  (cost=0.00..0.02 rows=1 width=136) (actual time=0.002..0.002 rows=1.00 loops=1)
+Planning Time: 0.012 ms
+Trigger for constraint UserAchievement_userId_fkey: time=0.061 calls=1
+Trigger for constraint UserAchievement_achievementId_fkey: time=0.051 calls=1
+Execution Time: 0.233 ms
+
+=== W31 run 2 ===
+Insert on "UserAchievement"  (cost=0.00..0.02 rows=1 width=136) (actual time=0.025..0.026 rows=1.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: UserAchievement_userId_achievementId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.02 rows=1 width=136) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.008 ms
+Trigger for constraint UserAchievement_userId_fkey: time=0.028 calls=1
+Trigger for constraint UserAchievement_achievementId_fkey: time=0.019 calls=1
+Execution Time: 0.078 ms
+
+=== W31 run 3 ===
+Insert on "UserAchievement"  (cost=0.00..0.02 rows=1 width=136) (actual time=0.138..0.138 rows=1.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: UserAchievement_userId_achievementId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=9 dirtied=2 written=2
+  ->  Result  (cost=0.00..0.02 rows=1 width=136) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.006 ms
+Trigger for constraint UserAchievement_userId_fkey: time=0.025 calls=1
+Trigger for constraint UserAchievement_achievementId_fkey: time=0.016 calls=1
+Execution Time: 0.183 ms

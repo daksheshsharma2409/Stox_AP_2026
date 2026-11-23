@@ -1,0 +1,26 @@
+=== W44 run 1 ===
+Insert on "LeaderboardEntry"  (cost=0.00..2.25 rows=0 width=0) (actual time=0.172..0.172 rows=0.00 loops=1)
+  Buffers: shared hit=8 read=1 dirtied=1
+  ->  Function Scan on jsonb_to_recordset x  (cost=0.00..2.25 rows=100 width=156) (actual time=0.012..0.013 rows=1.00 loops=1)
+Planning Time: 0.021 ms
+Trigger for constraint LeaderboardEntry_userId_fkey: time=0.043 calls=1
+Trigger for constraint LeaderboardEntry_snapshotId_fkey: time=0.028 calls=1
+Execution Time: 0.254 ms
+
+=== W44 run 2 ===
+Insert on "LeaderboardEntry"  (cost=0.00..2.25 rows=0 width=0) (actual time=1.006..1.006 rows=0.00 loops=1)
+  Buffers: shared hit=11 read=6 dirtied=5
+  ->  Function Scan on jsonb_to_recordset x  (cost=0.00..2.25 rows=100 width=156) (actual time=0.006..0.007 rows=1.00 loops=1)
+Planning Time: 0.018 ms
+Trigger for constraint LeaderboardEntry_userId_fkey: time=0.033 calls=1
+Trigger for constraint LeaderboardEntry_snapshotId_fkey: time=0.021 calls=1
+Execution Time: 1.069 ms
+
+=== W44 run 3 ===
+Insert on "LeaderboardEntry"  (cost=0.00..2.25 rows=0 width=0) (actual time=0.026..0.026 rows=0.00 loops=1)
+  Buffers: shared hit=10
+  ->  Function Scan on jsonb_to_recordset x  (cost=0.00..2.25 rows=100 width=156) (actual time=0.005..0.005 rows=1.00 loops=1)
+Planning Time: 0.013 ms
+Trigger for constraint LeaderboardEntry_userId_fkey: time=0.027 calls=1
+Trigger for constraint LeaderboardEntry_snapshotId_fkey: time=0.037 calls=1
+Execution Time: 0.097 ms

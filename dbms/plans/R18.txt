@@ -1,0 +1,64 @@
+=== R18 run 1 ===
+Limit  (cost=2.57..2.57 rows=1 width=203) (actual time=0.018..0.019 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.57..2.57 rows=1 width=203) (actual time=0.018..0.018 rows=1.00 loops=1)
+        Sort Key: a."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.43..2.56 rows=1 width=203) (actual time=0.014..0.016 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.003..0.004 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.41..1.41 rows=1 width=170) (actual time=0.008..0.008 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.41 rows=1 width=170) (actual time=0.006..0.006 rows=1.00 loops=1)
+                          Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.818 ms
+Execution Time: 0.031 ms
+
+=== R18 run 2 ===
+Limit  (cost=2.57..2.57 rows=1 width=203) (actual time=0.010..0.011 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.57..2.57 rows=1 width=203) (actual time=0.010..0.010 rows=1.00 loops=1)
+        Sort Key: a."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.43..2.56 rows=1 width=203) (actual time=0.008..0.009 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.002..0.003 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.41..1.41 rows=1 width=170) (actual time=0.003..0.003 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.41 rows=1 width=170) (actual time=0.002..0.002 rows=1.00 loops=1)
+                          Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Buffers: shared hit=1
+Planning Time: 0.057 ms
+Execution Time: 0.021 ms
+
+=== R18 run 3 ===
+Limit  (cost=2.57..2.57 rows=1 width=203) (actual time=0.008..0.009 rows=1.00 loops=1)
+  Buffers: shared hit=2
+  ->  Sort  (cost=2.57..2.57 rows=1 width=203) (actual time=0.008..0.009 rows=1.00 loops=1)
+        Sort Key: a."createdAt" DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=2
+        ->  Hash Join  (cost=1.43..2.56 rows=1 width=203) (actual time=0.006..0.008 rows=1.00 loops=1)
+              Hash Cond: (s.id = a."symbolId")
+              Buffers: shared hit=2
+              ->  Seq Scan on "Symbol" s  (cost=0.00..1.09 rows=9 width=65) (actual time=0.002..0.002 rows=9.00 loops=1)
+                    Buffers: shared hit=1
+              ->  Hash  (cost=1.41..1.41 rows=1 width=170) (actual time=0.003..0.003 rows=1.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on "Alert" a  (cost=0.00..1.41 rows=1 width=170) (actual time=0.002..0.002 rows=1.00 loops=1)
+                          Filter: ("userId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text)
+                          Buffers: shared hit=1
+Planning Time: 0.046 ms
+Execution Time: 0.017 ms

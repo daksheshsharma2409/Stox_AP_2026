@@ -1,0 +1,31 @@
+=== W46 run 1 ===
+Update on "League"  (cost=0.00..1.78 rows=0 width=0) (actual time=0.005..0.005 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "League"  (cost=0.00..1.78 rows=1 width=18) (actual time=0.005..0.005 rows=0.00 loops=1)
+        Filter: (("startDate" <= '2026-11-23 23:03:34.343'::timestamp without time zone) AND ("endDate" > '2026-11-23 23:03:34.343'::timestamp without time zone) AND (status = 'UPCOMING'::"LeagueStatus"))
+        Rows Removed by Filter: 2
+        Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.050 ms
+Execution Time: 0.023 ms
+
+=== W46 run 2 ===
+Update on "League"  (cost=0.00..1.78 rows=0 width=0) (actual time=0.003..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "League"  (cost=0.00..1.78 rows=1 width=18) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: (("startDate" <= '2026-11-23 23:03:34.343'::timestamp without time zone) AND ("endDate" > '2026-11-23 23:03:34.343'::timestamp without time zone) AND (status = 'UPCOMING'::"LeagueStatus"))
+        Rows Removed by Filter: 2
+        Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.008 ms
+
+=== W46 run 3 ===
+Update on "League"  (cost=0.00..1.78 rows=0 width=0) (actual time=0.004..0.004 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Seq Scan on "League"  (cost=0.00..1.78 rows=1 width=18) (actual time=0.003..0.003 rows=0.00 loops=1)
+        Filter: (("startDate" <= '2026-11-23 23:03:34.344'::timestamp without time zone) AND ("endDate" > '2026-11-23 23:03:34.344'::timestamp without time zone) AND (status = 'UPCOMING'::"LeagueStatus"))
+        Rows Removed by Filter: 2
+        Buffers: shared hit=1
+Planning Time: 0.022 ms
+Execution Time: 0.009 ms

@@ -1,0 +1,29 @@
+=== W50 run 1 ===
+Delete on "PerformanceSnapshot"  (cost=0.14..7.31 rows=0 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Index Scan using "PerformanceSnapshot_snapshotDate_idx" on "PerformanceSnapshot"  (cost=0.14..7.31 rows=1 width=6) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Index Cond: ("snapshotDate" < '2025-01-01'::date)
+        Index Searches: 1
+        Buffers: shared hit=1
+Planning Time: 0.021 ms
+Execution Time: 0.006 ms
+
+=== W50 run 2 ===
+Delete on "PerformanceSnapshot"  (cost=0.14..7.31 rows=0 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Index Scan using "PerformanceSnapshot_snapshotDate_idx" on "PerformanceSnapshot"  (cost=0.14..7.31 rows=1 width=6) (actual time=0.001..0.002 rows=0.00 loops=1)
+        Index Cond: ("snapshotDate" < '2025-01-01'::date)
+        Index Searches: 1
+        Buffers: shared hit=1
+Planning Time: 0.017 ms
+Execution Time: 0.006 ms
+
+=== W50 run 3 ===
+Delete on "PerformanceSnapshot"  (cost=0.14..7.31 rows=0 width=0) (actual time=0.001..0.001 rows=0.00 loops=1)
+  Buffers: shared hit=1
+  ->  Index Scan using "PerformanceSnapshot_snapshotDate_idx" on "PerformanceSnapshot"  (cost=0.14..7.31 rows=1 width=6) (actual time=0.001..0.001 rows=0.00 loops=1)
+        Index Cond: ("snapshotDate" < '2025-01-01'::date)
+        Index Searches: 1
+        Buffers: shared hit=1
+Planning Time: 0.012 ms
+Execution Time: 0.004 ms

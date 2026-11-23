@@ -1,0 +1,29 @@
+=== W41 run 1 ===
+Delete on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.015..0.016 rows=1.00 loops=1)
+  Buffers: shared hit=7
+  ->  Seq Scan on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.002..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'post-fixture-1'::text) AND ("authorId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.014 ms
+Trigger for constraint PostLike_postId_fkey: time=0.051 calls=1
+Execution Time: 0.081 ms
+
+=== W41 run 2 ===
+Delete on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.005..0.005 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'post-fixture-1'::text) AND ("authorId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.012 ms
+Trigger for constraint PostLike_postId_fkey: time=0.018 calls=1
+Execution Time: 0.025 ms
+
+=== W41 run 3 ===
+Delete on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.005..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=4
+  ->  Seq Scan on "Post"  (cost=0.00..1.00 rows=1 width=6) (actual time=0.003..0.003 rows=1.00 loops=1)
+        Filter: ((id = 'post-fixture-1'::text) AND ("authorId" = '12052212-42d1-41f3-87fc-dc38c88e1a6e'::text))
+        Buffers: shared hit=1
+Planning Time: 0.013 ms
+Trigger for constraint PostLike_postId_fkey: time=0.021 calls=1
+Execution Time: 0.030 ms

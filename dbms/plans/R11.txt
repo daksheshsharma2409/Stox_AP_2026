@@ -1,0 +1,43 @@
+=== R11 run 1 ===
+Limit  (cost=1.31..1.31 rows=1 width=159) (actual time=0.007..0.007 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.31..1.31 rows=1 width=159) (actual time=0.007..0.007 rows=1.00 loops=1)
+        Sort Key: "createdAt"
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Order"  (cost=0.00..1.30 rows=1 width=159) (actual time=0.004..0.006 rows=1.00 loops=1)
+              Filter: ((status = 'PENDING'::"OrderStatus") AND (("expiresAt" IS NULL) OR ("expiresAt" > now())) AND (("lastExecutionAttemptAt" IS NULL) OR ("lastExecutionAttemptAt" <= (now() - '00:00:30'::interval))))
+              Rows Removed by Filter: 16
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=12
+Planning Time: 0.065 ms
+Execution Time: 0.016 ms
+
+=== R11 run 2 ===
+Limit  (cost=1.31..1.31 rows=1 width=159) (actual time=0.006..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.31..1.31 rows=1 width=159) (actual time=0.005..0.006 rows=1.00 loops=1)
+        Sort Key: "createdAt"
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Order"  (cost=0.00..1.30 rows=1 width=159) (actual time=0.004..0.005 rows=1.00 loops=1)
+              Filter: ((status = 'PENDING'::"OrderStatus") AND (("expiresAt" IS NULL) OR ("expiresAt" > now())) AND (("lastExecutionAttemptAt" IS NULL) OR ("lastExecutionAttemptAt" <= (now() - '00:00:30'::interval))))
+              Rows Removed by Filter: 16
+              Buffers: shared hit=1
+Planning Time: 0.041 ms
+Execution Time: 0.013 ms
+
+=== R11 run 3 ===
+Limit  (cost=1.31..1.31 rows=1 width=159) (actual time=0.005..0.006 rows=1.00 loops=1)
+  Buffers: shared hit=1
+  ->  Sort  (cost=1.31..1.31 rows=1 width=159) (actual time=0.005..0.005 rows=1.00 loops=1)
+        Sort Key: "createdAt"
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1
+        ->  Seq Scan on "Order"  (cost=0.00..1.30 rows=1 width=159) (actual time=0.003..0.005 rows=1.00 loops=1)
+              Filter: ((status = 'PENDING'::"OrderStatus") AND (("expiresAt" IS NULL) OR ("expiresAt" > now())) AND (("lastExecutionAttemptAt" IS NULL) OR ("lastExecutionAttemptAt" <= (now() - '00:00:30'::interval))))
+              Rows Removed by Filter: 16
+              Buffers: shared hit=1
+Planning Time: 0.034 ms
+Execution Time: 0.012 ms

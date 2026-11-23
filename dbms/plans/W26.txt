@@ -1,0 +1,40 @@
+=== W26 run 1 ===
+Insert on "Follow"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.161..0.161 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: Follow_followerId_followingId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=13
+  ->  Result  (cost=0.00..0.02 rows=1 width=104) (actual time=0.000..0.001 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=50
+Planning Time: 0.049 ms
+Trigger for constraint Follow_followerId_fkey: time=0.060 calls=1
+Trigger for constraint Follow_followingId_fkey: time=0.034 calls=1
+Execution Time: 0.258 ms
+
+=== W26 run 2 ===
+Insert on "Follow"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.023..0.023 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: Follow_followerId_followingId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.02 rows=1 width=104) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Trigger for constraint Follow_followerId_fkey: time=0.031 calls=1
+Trigger for constraint Follow_followingId_fkey: time=0.023 calls=1
+Execution Time: 0.081 ms
+
+=== W26 run 3 ===
+Insert on "Follow"  (cost=0.00..0.02 rows=0 width=0) (actual time=0.021..0.021 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: Follow_followerId_followingId_key
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.02 rows=1 width=104) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Trigger for constraint Follow_followerId_fkey: time=0.028 calls=1
+Trigger for constraint Follow_followingId_fkey: time=0.021 calls=1
+Execution Time: 0.074 ms

@@ -1,0 +1,29 @@
+=== W30 run 1 ===
+Insert on "LeagueMember"  (cost=0.00..0.02 rows=1 width=160) (actual time=0.076..0.077 rows=1.00 loops=1)
+  Buffers: shared hit=9
+  ->  Result  (cost=0.00..0.02 rows=1 width=160) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.007 ms
+Trigger for constraint LeagueMember_leagueId_fkey: time=0.042 calls=1
+Trigger for constraint LeagueMember_userId_fkey: time=0.039 calls=1
+Trigger for constraint LeagueMember_portfolioId_fkey: time=0.051 calls=1
+Execution Time: 0.214 ms
+
+=== W30 run 2 ===
+Insert on "LeagueMember"  (cost=0.00..0.02 rows=1 width=160) (actual time=0.015..0.015 rows=1.00 loops=1)
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.02 rows=1 width=160) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.008 ms
+Trigger for constraint LeagueMember_leagueId_fkey: time=0.024 calls=1
+Trigger for constraint LeagueMember_userId_fkey: time=0.024 calls=1
+Trigger for constraint LeagueMember_portfolioId_fkey: time=0.021 calls=1
+Execution Time: 0.091 ms
+
+=== W30 run 3 ===
+Insert on "LeagueMember"  (cost=0.00..0.02 rows=1 width=160) (actual time=0.012..0.012 rows=1.00 loops=1)
+  Buffers: shared hit=8
+  ->  Result  (cost=0.00..0.02 rows=1 width=160) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning Time: 0.006 ms
+Trigger for constraint LeagueMember_leagueId_fkey: time=0.019 calls=1
+Trigger for constraint LeagueMember_userId_fkey: time=0.021 calls=1
+Trigger for constraint LeagueMember_portfolioId_fkey: time=0.019 calls=1
+Execution Time: 0.075 ms
